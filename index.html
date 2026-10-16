@@ -2,192 +2,252 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Relay</title>
-<meta name="description" content="Pass the book. Keep the context. Your inherited book, ranked, explained, with the ninety second brief in your ear.">
+<meta name="description" content="Pass the book. Keep the context. Your inherited book, ranked and explained, with the ninety second brief in your own voice.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23FAF9F5%27/%3E%3Cline x1=%279%27 y1=%2722%27 x2=%2723%27 y2=%2710%27 stroke=%27%23B4536A%27 stroke-width=%275%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
 <style>
 *{box-sizing:border-box}
-:root{--bg:#FAF9F5;--ink:#141413;--surface:#fff;--line:#E8E5DC;--muted:#5E5D59;--glaze:#F2EFE6;--soft:#F6F4EE;
---run:#C2573A;--protect:#D9A23B;--expand:#4E8F6A;--watch:#8A867E;
---d:"Instrument Sans",Arial,sans-serif;--s:"Source Serif 4",Georgia,serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D;--soft:#1A1915}}
-:root[data-theme="dark"]{--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D;--soft:#1A1915}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--s);font-size:17px}
-.wrap{max-width:1040px;margin:0 auto;padding:36px 16px 70px}
+:root{--bg:#FAF9F5;--ink:#141413;--surface:#fff;--line:#E8E5DC;--muted:#5E5D59;--glaze:#F2EFE6;--bib:#B4536A;--clay:#D27A5E;
+--red:#C2573A;--amber:#B5841F;--yellow:#D9A23B;--green:#4E8F6A;--grey:#8A867E;--sf:#0176D3;
+--d:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--s:"Source Serif 4",Georgia,serif;--m:ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--s);font-size:17px;line-height:1.5}
+h1,h2,h3,h4,h5,h6{font-family:var(--d);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
 .mono{font-family:var(--d);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-h1{font-family:var(--d);font-size:40px;font-weight:600;letter-spacing:-.03em;margin:6px 0 4px}
-h2{font-family:var(--d);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:38px 0 12px;display:flex;align-items:baseline;gap:12px}
-h2 small{font-weight:400;text-transform:none;letter-spacing:0;font-size:12px}
-h3{font-family:var(--d);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
-.sub{font-family:var(--d);font-size:14px;color:var(--muted);margin:0 0 18px;line-height:1.5}
-.nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
-.nav a{font-family:var(--d);font-size:12px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
-.nav a:hover{background:var(--glaze)}
-.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
-@media(max-width:620px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.tile{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:11px 13px;cursor:pointer}
-.tile.on{outline:2px solid var(--ink)}
-.tile b{display:block;font-family:var(--d);font-size:20px;font-weight:600;letter-spacing:-.02em}
-.tile span{font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.tile i{font-style:normal;font-family:var(--d);font-size:11px;color:var(--muted);margin-left:6px}
-.card{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px 20px}
-.player .theme{font-family:var(--d);font-size:16px;font-weight:600;letter-spacing:-.01em;margin:2px 0 10px}
-.player audio{width:100%;display:block}
-.none{font-family:var(--d);font-size:13px;color:var(--muted)}
-.brief{font-size:18px;line-height:1.55;white-space:pre-wrap;margin-top:10px}
-details.fold>summary{cursor:pointer;font-family:var(--d);font-size:13px;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
-details.fold>summary::before{content:"▸";font-size:11px}
-details.fold[open]>summary::before{content:"▾"}
-.explain{font-family:var(--d);font-size:14px;line-height:1.55;color:var(--ink)}
-.explain table{min-width:0;margin-top:10px}
-.explain td,.explain th{padding:7px 10px}
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:680px}
-th{font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
-td{padding:10px 10px;border-top:1px solid var(--line);font-family:var(--d);font-size:13.5px;vertical-align:middle}
-tr.row{cursor:pointer}
-tr.row:hover td{background:var(--soft)}
-tr.row.open td{background:var(--glaze)}
-tr.hide{display:none}
-td.rk{color:#A5A199;font-size:10px;width:30px;text-align:right}
-td.sc{font-size:17px;font-weight:600;width:48px;text-align:right;font-variant-numeric:tabular-nums}
-td.nm b{display:block;font-size:14px;font-weight:600}
-td.nm span{font-size:11.5px;color:var(--muted)}
-td.n{width:64px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
-td.ct{width:92px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:right}
-td.tr{width:60px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:right}
-td.car{width:22px;color:var(--muted);font-size:11px}
-tr.detail td{background:var(--soft);padding:0}
-.det{padding:18px 22px 24px;font-family:var(--d);font-size:14px;line-height:1.55}
-.det .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:760px){.det .grid{grid-template-columns:1fr}}
-.bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 6px}
-@media(max-width:620px){.bars{grid-template-columns:1fr}}
-.bar{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 12px}
-.bar .k{display:flex;justify-content:space-between;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.bar .k b{font-size:18px;color:var(--ink);letter-spacing:-.02em}
-.bar .t{height:5px;background:var(--line);border-radius:3px;margin:8px 0}
-.bar .t i{display:block;height:100%;border-radius:3px}
-.bar p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
-.rec{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px}
-.rec dt{color:var(--muted)}.rec dd{margin:0}
-.quote{border-left:3px solid var(--line);padding:4px 12px;margin:8px 0;font-family:var(--s);font-size:15px;line-height:1.5}
-.risk li{margin:3px 0}
-.verdict{display:inline-block;border-radius:999px;padding:2px 10px;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fff;margin-right:8px}
-.play p{margin:0 0 10px}
-.play .lbl{font-weight:700;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
-.lies .card{margin-bottom:10px}
-.lies .who{font-family:var(--d);font-weight:600;font-size:15px;margin-bottom:6px;display:flex;gap:10px;align-items:center}
-.lies .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;font-family:var(--d);font-size:13px;line-height:1.5}
-@media(max-width:760px){.lies .cols{grid-template-columns:1fr}}
-.lies .lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-.foot{margin-top:14px;font-family:var(--d);font-size:11.5px;color:var(--muted)}
-.pill{display:inline-block;border:1px solid var(--run);color:var(--run);border-radius:999px;padding:1px 9px;font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
-.past{list-style:none;padding:0;margin:0;font-family:var(--d);font-size:13px}
-.past li{padding:8px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
-.past li:first-child{border-top:0}.past .d{color:var(--muted);min-width:56px}.past a{color:inherit}
-.hint{font-family:var(--d);font-size:12px;color:var(--muted);margin:6px 0 0}
-</style></head><body><div class="wrap">
-<div class="mono" id="stamp">Relay</div>
-<h1 id="title">Relay</h1>
-<p class="sub" id="sub">Loading the book…</p>
-<div class="nav"><a href="#brief">The brief</a><a href="#book">The book</a><a href="#lies">Where the record lies</a><a href="#score">How the score works</a></div>
-
-<h2 id="brief">The brief <small>ninety seconds, in your own voice</small></h2>
-<div class="card player" id="player"><div class="none">No episode yet.</div></div>
-<div class="card" id="briefcard" hidden><details class="fold" open><summary>Read the script</summary><div class="brief" id="brieftext"></div></details></div>
-
-<h2 id="book">The book <small>weakest first. Click any account to open it.</small></h2>
-<div class="tiles" id="tiles"></div>
-<div class="tablewrap"><table id="table"><thead><tr><th></th><th>Score</th><th>Account</th><th>Renew</th><th>Spend</th><th>Health</th><th>Trust</th><th></th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
-<p class="foot" id="foot"></p>
-
-<h2 id="lies">Where the record lies <small>only the accounts whose notes disagree with the CRM</small></h2>
-<div class="lies" id="liesbox"><div class="none">Nothing to show.</div></div>
-
-<h2 id="score">How the score works</h2>
-<div class="card explain">
-<p>One number per account, zero to one hundred, <b>higher is better</b>. A high score is an account in good standing you can leave alone; a low score is an account that needs you. It is three inputs averaged, and every row shows all three so you can see which one is dragging.</p>
-<p><b>Renewal</b> is runway. Zero days scores zero, six months or more scores one hundred, straight line in between. Past half a year timing is not the problem, so it stops there.</p>
-<p><b>Spend</b> is contract value as a rank inside this book, not a raw scale: smallest account zero, largest one hundred, median fifty. One huge account cannot squash everyone else.</p>
-<p><b>Health</b> is the only input that says something is <i>wrong</i>. It starts at one hundred and loses: up to 25 for a stale next step (Low trust 25, Medium 12, High 0), up to 25 for usage (falling 25, flat 10, growing 0), 15 for open tickets or negative support sentiment, 20 for service failures.</p>
-<p><b>Reading it.</b> Under 40, something is wrong and the clock is running: this week. 40 to 69, worth a look this month. 70 and up, in good standing. <span id="wline"></span></p>
-<p><b>Trust</b> is a separate judgement: how far the CRM record has drifted from what the humans wrote in the notes. <b>Category</b> says what kind of attention: Run now, Protect, Expand or Watch.</p>
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:54px}
+.mark{font-family:var(--d);font-size:20px;font-weight:700;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
+.mark em{font-style:normal;color:var(--bib)}
+.top nav{display:flex;gap:16px}
+.top nav a{font-family:var(--d);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+.hero{padding:26px 0 16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:18px;align-items:end}
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
+.hero h1{font-size:clamp(30px,4.6vw,42px);letter-spacing:-.035em;margin:4px 0 4px}
+.hero p{margin:0;font-family:var(--d);font-size:13.5px;color:var(--muted);line-height:1.5}
+.pod{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:11px 13px 9px}
+.pod .ph{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px}
+.pod .ph b{font-family:var(--d);font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pod audio{width:100%;height:34px;display:block}
+.pod .none{font-family:var(--d);font-size:12.5px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px;margin-top:6px}
+.rp-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.dummy{display:inline-flex;align-items:center;border:1px solid var(--red);color:var(--red);border-radius:999px;padding:1px 9px;font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.relay-grid{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:18px;align-items:start}
+@media(max-width:880px){.relay-grid{grid-template-columns:minmax(0,1fr)}}
+.relay-left,.relay-right{display:flex;flex-direction:column;gap:10px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.kpi{display:flex;flex-direction:column;align-items:flex-start;gap:1px;border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:var(--bg);cursor:pointer;text-align:left;font-family:var(--d)}
+.kpi b{font-size:18px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.kpi b i{font-style:normal;font-size:11px;font-weight:500;color:var(--muted);margin-left:5px}
+.kpi span{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.kpi[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.blist-h{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--d);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.blist{list-style:none;margin:0;padding:0;max-height:430px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.brow{display:grid;grid-template-columns:16px 30px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line);border-left:3px solid transparent;padding:8px 11px;cursor:pointer;font-family:var(--d);color:var(--ink)}
+.blist li:first-child .brow{border-top:0}
+.brank{font-size:10px;font-weight:600;color:#A5A199;text-align:right;font-variant-numeric:tabular-nums}
+.bscore{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.bmain{min-width:0;display:flex;flex-direction:column;gap:1px}
+.bmain b{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bmain span{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bcat{font-size:9px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;color:var(--muted)}
+.brow:hover{background:var(--glaze)}
+.brow[aria-current="true"]{background:var(--glaze);border-left-width:4px}
+.brow[aria-current="true"] .bmain b{text-decoration:underline;text-underline-offset:3px}
+.rp-hint{margin:0;font-family:var(--d);font-size:11.5px;line-height:1.45;color:var(--muted)}
+.rhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.rhead>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.rhead b{font-family:var(--d);font-size:19px;font-weight:600}
+.rhead .sub{font-family:var(--d);font-size:13px;color:var(--muted)}
+.pill{align-self:flex-start;color:#fff;font-family:var(--d);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 10px;white-space:nowrap;margin-top:4px}
+.meter{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;border-radius:3px}
+.rparts{display:flex;flex-wrap:wrap;gap:16px}
+.rparts span{display:inline-flex;align-items:baseline;gap:5px}
+.rparts i{font-style:normal;font-family:var(--d);font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rparts b{font-family:var(--d);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.why{margin:0;font-family:var(--d);font-size:12px;line-height:1.5;color:var(--muted)}
+.why b{color:var(--ink);font-weight:600}
+.track{position:relative;height:56px;background:var(--clay);border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);display:flex}
+.lanes{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-evenly;pointer-events:none}
+.lanes i{display:block;height:1px;background:rgba(255,255,255,.45)}
+.fill{position:absolute;left:0;top:0;bottom:0;background:rgba(255,255,255,.26);width:25%;pointer-events:none;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.leg{position:relative;z-index:1;flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:1px;background:none;border:0;cursor:pointer;padding:0 8px 0 40px;text-align:left;color:#fff;font-family:var(--d)}
+.leg+.leg::before{content:"";position:absolute;left:-5px;top:0;bottom:0;width:10px;background:repeating-linear-gradient(130deg,rgba(255,255,255,.85) 0 2px,transparent 2px 5px);pointer-events:none}
+.leg .n{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.72;white-space:nowrap}
+.leg b{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.82}
+.leg[aria-selected="true"] .n,.leg[aria-selected="true"] b{opacity:1}
+.leg[aria-selected="true"] b{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.leg:hover{background:rgba(255,255,255,.1)}.leg[aria-selected="true"]:hover{background:none}
+.leg:last-of-type{padding-right:22px}
+.finish{position:absolute;right:0;top:0;bottom:0;width:16px;background:conic-gradient(#fff 25%,#1E1C1A 0 50%,#fff 0 75%,#1E1C1A 0) 0 0/8px 8px;opacity:.95;pointer-events:none;z-index:1}
+.baton{position:absolute;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);display:grid;place-items:center;z-index:2;pointer-events:none;transition:left .35s cubic-bezier(.4,0,.2,1)}
+.baton i{display:block;width:10px;height:3px;border-radius:2px;background:var(--bib);transform:rotate(-32deg)}
+@media(max-width:560px){.leg b{display:none}.leg{padding-left:26px}.track{height:44px}.baton{width:18px;height:18px;margin-top:-9px}}
+.acct{background:var(--glaze);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:7px;min-height:300px}
+.acct h4{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;gap:8px;align-items:baseline}
+.acct h4 span{color:var(--bib)}
+.acct h5{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-top:1px solid color-mix(in srgb,var(--ink) 9%,transparent);padding-top:8px;margin-top:6px}
+.acct p{margin:0;font-size:15px;line-height:1.45}
+.acct ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.45}
+.lead{font-family:var(--d)!important;font-size:13px!important;color:var(--muted)}
+.sfc{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.sfc-h{display:flex;align-items:center;justify-content:space-between;background:var(--sf);color:#fff;padding:6px 11px;font-family:var(--d);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.sfc-h em{font-style:normal;opacity:.85;letter-spacing:.06em}
+.sfc dl{margin:0;display:grid;grid-template-columns:132px minmax(0,1fr)}
+.sfc dt{padding:6px 11px;font-family:var(--d);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line)}
+.sfc dd{margin:0;padding:6px 11px;font-family:var(--d);font-size:13px;border-top:1px solid var(--line)}
+.sfc dt.r0,.sfc dd.r0{border-top:0}
+.sfc dd.stale{color:var(--red)}
+.sfc dd .tag{display:inline-block;margin-left:6px;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;border-radius:4px;padding:0 4px;vertical-align:middle}
+@media(max-width:560px){.sfc dl{grid-template-columns:minmax(0,1fr)}.sfc dt{padding-bottom:0}.sfc dd{border-top:0;padding-top:2px}}
+.rel{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-family:var(--d);font-size:12.5px;line-height:1.45}
+.rel dt{color:var(--muted)}.rel dd{margin:0}
+.nfeed{list-style:none;padding:0!important;margin:0;display:flex;flex-direction:column;gap:8px}
+.nfeed li{background:var(--surface);border:1px solid var(--line);border-radius:10px 10px 10px 4px;padding:8px 11px}
+.nfeed .nm{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;margin-bottom:2px}
+.nfeed .nm b{font-family:var(--d);font-size:12px;font-weight:600}
+.nfeed .nm span{font-family:var(--d);font-size:11px;color:var(--muted)}
+.nfeed p{font-size:14.5px}
+.verdict{display:inline-block;color:#fff;border-radius:999px;padding:2px 9px;font-family:var(--d);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-right:7px;vertical-align:middle}
+.play dt{font-family:var(--d);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.play dt:first-child{margin-top:0}
+.play dd{margin:1px 0 0;font-size:15px;line-height:1.45}
+.play dd.q{font-style:italic}
+.script{white-space:pre-wrap;font-size:15.5px;line-height:1.5}
+details{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 16px;margin-top:10px}
+details>summary{cursor:pointer;list-style:none;padding:12px 0;font-family:var(--d);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+details>summary::before{content:"▸";font-size:10px}details[open]>summary::before{content:"▾"}
+details>div{padding:0 0 16px;font-family:var(--d);font-size:14px;line-height:1.55}
+details p{margin:0 0 8px}
+.lie{display:grid;grid-template-columns:150px 1fr 1fr 1fr;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px;line-height:1.45}
+.lie:first-of-type{border-top:0}
+.lie b{font-size:13px;display:block}.lie button{background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.lie .l{display:block;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:760px){.lie{grid-template-columns:1fr}}
+.foot{padding:22px 0 40px;font-family:var(--d);font-size:11.5px;color:var(--muted);line-height:1.5}
+.past{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.past a{font-family:var(--d);font-size:11px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 9px;background:var(--surface)}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="mark" href="#top">Re<em>lay</em></a><nav><a href="#brief">Brief</a><a href="#book">Book</a><a href="#lies">Record check</a><a href="#score">Scoring</a></nav></div></header>
+<div class="wrap" id="top">
+<div class="hero">
+  <div><div class="mono" id="stamp">Relay</div><h1 id="title">Relay</h1><p id="sub">Loading the book…</p></div>
+  <div class="pod" id="brief"><div class="none">No episode yet.</div></div>
 </div>
 
-<h2>Past briefs</h2>
-<ul class="past" id="past"><li class="none">None yet.</li></ul>
+<div class="panel" id="book">
+  <div class="rp-head"><span class="mono" id="cap"></span><span id="dummy" class="dummy" hidden>Dummy data</span></div>
+  <div class="relay-grid">
+    <div class="relay-left">
+      <div class="kpis" id="kpis"></div>
+      <div class="blist-h"><span>Needs you first</span><span id="listcap"></span></div>
+      <ol class="blist" id="blist" aria-label="The inherited book, ranked"></ol>
+      <p class="rp-hint">Relay score is renewal time, account spend and account health, averaged. Higher is better, so the book opens on its weakest accounts. Tap a row or a category.</p>
+    </div>
+    <div class="relay-right">
+      <div class="rhead" id="rhead"></div>
+      <div class="meter" id="meter"><i></i></div>
+      <div class="rparts" id="rparts"></div>
+      <p class="why" id="why"></p>
+      <div class="track" role="tablist" id="track">
+        <span class="lanes"><i></i><i></i><i></i></span><span class="fill" id="fill"></span>
+        <button type="button" class="leg" role="tab" data-leg="0" aria-selected="true"><span class="n">Leg 1</span><b>The record</b></button>
+        <button type="button" class="leg" role="tab" data-leg="1" aria-selected="false"><span class="n">Leg 2</span><b>The notes</b></button>
+        <button type="button" class="leg" role="tab" data-leg="2" aria-selected="false"><span class="n">Leg 3</span><b>The play</b></button>
+        <button type="button" class="leg" role="tab" data-leg="3" aria-selected="false"><span class="n">Leg 4</span><b>The brief</b></button>
+        <span class="baton" id="baton"><i></i></span><span class="finish"></span>
+      </div>
+      <div class="acct" id="card" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+<details id="lies"><summary>Where the record lies · <span id="liecount"></span></summary><div id="liesbox"></div></details>
+
+<details id="score"><summary>How the score works</summary><div>
+<p>One number per account, zero to one hundred, <b>higher is better</b>. A high score is an account in good standing you can leave alone; a low score is an account that needs you. Three inputs averaged, and every account shows all three with the reason behind each, so you can see which one is dragging.</p>
+<p><b>Renewal</b> is runway: zero days scores zero, six months or more scores one hundred, straight line between. <b>Spend</b> is contract value ranked inside this book, smallest zero, largest one hundred, median fifty, so one huge account cannot squash the rest. <b>Health</b> is the only input that says something is <i>wrong</i>: it starts at one hundred and loses up to 25 for a stale next step (Low trust 25, Medium 12), up to 25 for usage (falling 25, flat 10), 15 for tickets or souring support sentiment, 20 for service failures.</p>
+<p><b>Reading it.</b> Under 40, this week. 40 to 69, this month. 70 and up, leave it alone. <span id="wline"></span> <b>Trust</b> is separate: how far the record has drifted from what the humans wrote. <b>Category</b> says what kind of attention: Run now, Protect, Expand or Watch.</p>
+</div></details>
+
+<div class="foot"><span id="footnote"></span><div class="past" id="past"></div></div>
 </div>
 <script>
 (async function(){
-  const CAT={"Run now":"var(--run)","Protect":"var(--protect)","Expand":"var(--expand)","Watch":"var(--watch)"};
-  const BAND={low:"var(--run)",mid:"var(--protect)",high:"var(--expand)"};
-  const TRUST={Low:"var(--run)",Medium:"var(--protect)",High:"var(--expand)"};
+  const CAT={"Run now":"var(--red)","Protect":"var(--yellow)","Expand":"var(--green)","Watch":"var(--grey)"};
+  const BAND={low:"var(--red)",mid:"var(--yellow)",high:"var(--green)"};
+  const TRUST={Low:"var(--red)",Medium:"var(--yellow)",High:"var(--green)"};
   const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const bust="?v="+Date.now();
-  let dash=null, eps=[];
+  let dash=null,eps=[];
   try{dash=await (await fetch("dashboard.json"+bust)).json();}catch(e){}
   try{eps=await (await fetch("episodes.json"+bust)).json();}catch(e){}
-
-  if(eps.length){
-    const e=eps[0];
-    document.getElementById("player").innerHTML='<div class="mono">'+esc(e.date)+(e.dur?' · '+Math.floor(e.dur/60)+':'+String(e.dur%60).padStart(2,"0"):'')+'</div><div class="theme">'+esc(e.theme)+'</div><audio controls preload="metadata" src="'+esc(e.file)+'"></audio>';
-    document.getElementById("past").innerHTML=eps.map(x=>'<li><span class="d">'+esc(x.short||x.date)+'</span><a href="'+esc(x.file)+'">'+esc(x.theme)+'</a></li>').join("");
-  }
+  const ep=eps[0];
+  const pod=document.getElementById("brief");
+  if(ep){pod.innerHTML='<div class="ph"><b>'+esc(ep.theme)+'</b><span class="mono">'+esc(ep.short||ep.date)+(ep.dur?' · '+Math.floor(ep.dur/60)+':'+String(ep.dur%60).padStart(2,"0"):'')+'</span></div><audio controls preload="metadata" src="'+esc(ep.file)+'"></audio>';
+    document.getElementById("past").innerHTML=eps.length>1?'<span class="mono" style="align-self:center">Past briefs</span>'+eps.slice(1).map(x=>'<a href="'+esc(x.file)+'">'+esc(x.short||x.date)+'</a>').join(""):"";}
   if(!dash){document.getElementById("sub").textContent="No book yet. Run /relay and it will land here.";return;}
 
   document.title="Relay · "+dash.title;
-  document.getElementById("stamp").textContent="Relay · generated "+dash.generated;
+  document.getElementById("stamp").textContent="Relay · "+dash.generated;
   document.getElementById("title").textContent=dash.title;
-  document.getElementById("sub").textContent=dash.accounts+" accounts · "+dash.total+" · "+dash.weighting+" "+dash.under40+" under forty. Higher is better, so the book opens on its weakest accounts.";
+  document.getElementById("sub").textContent=dash.accounts+" accounts · "+dash.total+" · "+dash.weighting+" "+dash.under40+" under forty.";
+  document.getElementById("cap").textContent=dash.title+" · "+dash.accounts+" accounts · "+dash.total+" ARR";
+  document.getElementById("dummy").hidden=!dash.dummy;
   document.getElementById("wline").textContent="This book: "+dash.weighting;
-  if(dash.brief){document.getElementById("brieftext").textContent=dash.brief;document.getElementById("briefcard").hidden=false;}
+  document.getElementById("footnote").textContent=(dash.dummy?"Dummy data throughout. Every company, person, number and note here is invented. ":"")+"Relay scores what it is given. Where the record and the rep notes disagree, trust the notes and verify before the call.";
 
-  let filter=null;
-  const tiles=document.getElementById("tiles");
-  tiles.innerHTML=dash.tiles.map(t=>'<div class="tile" data-cat="'+esc(t.category)+'" title="Click to show only '+esc(t.category)+'"><b style="color:'+CAT[t.category]+'">'+esc(t.total)+'<i>'+t.count+' acct'+(t.count==1?'':'s')+'</i></b><span>'+esc(t.category)+'</span></div>').join("");
-  tiles.querySelectorAll(".tile").forEach(el=>el.onclick=()=>{filter=(filter===el.dataset.cat)?null:el.dataset.cat;tiles.querySelectorAll(".tile").forEach(x=>x.classList.toggle("on",x.dataset.cat===filter));applyFilter();});
-  function applyFilter(){document.querySelectorAll("#tbody tr.row").forEach(r=>{const on=!filter||r.dataset.cat===filter;r.classList.toggle("hide",!on);const d=r.nextElementSibling;if(d&&!on){d.remove();r.classList.remove("open");}});}
-
-  const tb=document.getElementById("tbody");
-  tb.innerHTML=dash.rows.map(r=>'<tr class="row" data-i="'+(r.rank-1)+'" data-cat="'+esc(r.category)+'"><td class="rk">'+r.rank+'</td><td class="sc" style="color:'+BAND[r.band]+'">'+r.score+'</td><td class="nm"><b>'+esc(r.name)+'</b><span>'+esc(r.arr)+' · renews in '+r.days+' days</span></td><td class="n">'+r.renewal+'</td><td class="n">'+r.spend+'</td><td class="n">'+r.health+'</td><td class="tr" style="color:'+TRUST[r.trust]+'">'+esc(r.trust)+'</td><td class="ct" style="color:'+CAT[r.category]+'">'+esc(r.category)+'</td><td class="car">▸</td></tr>').join("");
-  document.getElementById("foot").innerHTML=(dash.dummy?'<span class="pill">Dummy data</span>Every company, person and number in this book is invented. ':'<span class="pill">Check the data</span>')+"Relay scores what it is given. Where the record and the rep notes disagree, trust the notes and verify before the call.";
-
-  function bar(label,val,why,color){return '<div class="bar"><div class="k"><span>'+label+'</span><b>'+val+'</b></div><div class="t"><i style="width:'+val+'%;background:'+color+'"></i></div><p>'+esc(why)+'</p></div>';}
-  function detail(r){
-    const p=r.play||{};
-    const sc=BAND[r.band];
-    let h='<div class="det">';
-    h+='<h3 style="margin-top:0">Why '+r.score+'</h3><div class="bars">'+bar("Renewal",r.renewal,r.why.renewal,sc)+bar("Spend",r.spend,r.why.spend,sc)+bar("Health",r.health,r.why.health,sc)+'</div>';
-    h+='<p class="hint">Score = (renewal × '+dash.weights.renewal+'% + spend × '+dash.weights.spend+'% + health × '+dash.weights.health+'%). Category: <b style="color:'+CAT[r.category]+'">'+esc(r.category)+'</b>. Trust in the record: <b style="color:'+TRUST[r.trust]+'">'+esc(r.trust)+'</b>.</p>';
-    h+='<div class="grid"><div>';
-    h+='<h3>Leg 1 · The record <span style="font-weight:400;text-transform:none;letter-spacing:0">(Salesforce)</span></h3><dl class="rec">'+Object.entries(r.record).filter(([k,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join("")+'</dl>';
-    h+='<h3>Relationships</h3><dl class="rec"><dt>Champion</dt><dd>'+esc(r.champion||"None")+'</dd><dt>Key stakeholder</dt><dd>'+esc(r.stakeholder||"—")+'</dd><dt>Missing</dt><dd>'+esc(r.missing||"—")+'</dd></dl>';
-    h+='</div><div>';
-    h+='<h3>Leg 2 · The notes <span style="font-weight:400;text-transform:none;letter-spacing:0">(what the humans wrote)</span></h3>'+(r.notes.length?r.notes.map(n=>'<div class="quote">'+esc(n)+'</div>').join(""):'<p class="none">No notes on file.</p>');
-    if(r.risks.length)h+='<h3>Risk signals</h3><ul class="risk">'+r.risks.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>';
-    h+='<h3>Record check</h3><p><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+' trust</span>'+(p.lie?esc(p.lie.record)+' <b>vs.</b> '+esc(p.lie.notes)+' <b>Verify first:</b> '+esc(p.lie.verify):'The record and the notes agree.')+'</p>';
-    h+='</div></div>';
-    if(r.play){h+='<h3>Leg 3 · The play</h3><div class="grid play"><div><p><span class="lbl">Why now</span>'+esc(p.why_now)+'</p><p><span class="lbl">Next move</span>'+esc(p.play)+'</p><p><span class="lbl">Expansion signal</span>'+esc(p.expansion)+'</p></div><div><p><span class="lbl">Who to engage</span>'+esc(p.engage)+'</p><p><span class="lbl">Biggest unknown</span>'+esc(p.unknown)+'</p><p><span class="lbl">Ask the outgoing rep</span>“'+esc(p.baton)+'”</p></div></div>';}
-    else h+='<h3>Leg 3 · The play</h3><p class="none">Not written yet.</p>';
-    return h+'</div>';
+  const rows=dash.rows;let sel=0,leg=0,filt=null;
+  const kp=document.getElementById("kpis");
+  kp.innerHTML=dash.tiles.map(t=>'<button type="button" class="kpi" data-cat="'+esc(t.category)+'" aria-pressed="false"><b>'+esc(t.total)+'<i>'+t.count+'</i></b><span style="color:'+CAT[t.category]+'">'+esc(t.category)+'</span></button>').join("");
+  kp.querySelectorAll(".kpi").forEach(b=>b.onclick=()=>{filt=filt===b.dataset.cat?null:b.dataset.cat;kp.querySelectorAll(".kpi").forEach(x=>x.setAttribute("aria-pressed",x.dataset.cat===filt));drawList();});
+  const bl=document.getElementById("blist");
+  function drawList(){
+    const v=rows.filter(r=>!filt||r.category===filt);
+    if(!v.some(r=>r.rank-1===sel))sel=v.length?v[0].rank-1:0;
+    bl.innerHTML=v.map(r=>'<li><button type="button" class="brow" data-i="'+(r.rank-1)+'" aria-current="'+(r.rank-1===sel)+'" style="border-left-color:'+BAND[r.band]+'"><span class="brank">'+r.rank+'</span><span class="bscore" style="color:'+BAND[r.band]+'">'+r.score+'</span><span class="bmain"><b>'+esc(r.name)+'</b><span>'+esc(r.arr)+' · renews in '+r.days+' days</span></span><span class="bcat">'+esc(r.category)+'</span></button></li>').join("");
+    bl.querySelectorAll(".brow").forEach(b=>b.onclick=()=>{sel=+b.dataset.i;leg=0;drawList();showAcct();});
+    document.getElementById("listcap").textContent=v.length+" account"+(v.length===1?"":"s");
+    const on=bl.querySelector('[aria-current="true"]');if(on)on.scrollIntoView({block:"nearest"});
+    showAcct();
   }
-  tb.addEventListener("click",ev=>{
-    const tr=ev.target.closest("tr.row");if(!tr)return;
-    const open=tr.classList.contains("open");
-    document.querySelectorAll("#tbody tr.detail").forEach(x=>x.remove());
-    document.querySelectorAll("#tbody tr.row.open").forEach(x=>{x.classList.remove("open");x.lastElementChild.textContent="▸";});
-    if(open)return;
-    const r=dash.rows[+tr.dataset.i];
-    tr.classList.add("open");tr.lastElementChild.textContent="▾";
-    const d=document.createElement("tr");d.className="detail";d.innerHTML='<td colspan="9">'+detail(r)+'</td>';
-    tr.after(d);
-    if(location.hash!=="#"+encodeURIComponent(r.name))history.replaceState(null,"","#"+encodeURIComponent(r.name));
-  });
-  const lies=dash.rows.filter(r=>r.play&&r.play.lie);
-  if(lies.length)document.getElementById("liesbox").innerHTML=lies.map(r=>'<div class="card"><div class="who"><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+'</span>'+esc(r.name)+'<span class="mono" style="font-weight:500">'+esc(r.arr)+' · '+r.days+' days</span></div><div class="cols"><div><span class="lbl">The record says</span>'+esc(r.play.lie.record)+'</div><div><span class="lbl">The notes say</span>'+esc(r.play.lie.notes)+'</div><div><span class="lbl">Verify before the call</span>'+esc(r.play.lie.verify)+'</div></div></div>').join("");
-  const want=decodeURIComponent(location.hash.slice(1));
-  if(want){const i=dash.rows.findIndex(r=>r.name===want);if(i>=0){const tr=tb.querySelector('tr[data-i="'+i+'"]');tr.click();tr.scrollIntoView({block:"start"});}}
+  const legs=[...document.querySelectorAll(".leg")];
+  legs.forEach(b=>b.onclick=()=>{leg=+b.dataset.leg;showAcct();});
+  function sf(k,v,i,stale){return '<dt class="'+(i?"":"r0")+'">'+esc(k)+'</dt><dd class="'+(i?"":"r0")+(stale?" stale":"")+'">'+esc(v)+(stale?'<span class="tag">Check</span>':"")+'</dd>';}
+  function legHTML(r){
+    const p=r.play||{};
+    if(leg===0){const rec=Object.entries(r.record).filter(([k,v])=>v);
+      return '<h4><span>Leg 1</span>The record</h4><p class="lead">What Salesforce says, flat and without interpretation.</p><div class="sfc"><div class="sfc-h"><span>Salesforce · Account</span><em>'+esc(r.trust)+' trust</em></div><dl>'+rec.map(([k,v],i)=>sf(k,v,i,(k==="Stage"&&r.trust==="Low")||(k==="Open opportunities"&&/passed|no close date/i.test(v)))).join("")+'</dl></div>'
+        +'<h5>Relationships</h5><dl class="rel"><dt>Champion</dt><dd>'+esc(r.champion||"None")+'</dd><dt>Key stakeholder</dt><dd>'+esc(r.stakeholder||"—")+'</dd><dt>Missing</dt><dd>'+esc(r.missing||"—")+'</dd></dl>';}
+    if(leg===1){const notes=r.notes.map(n=>{const m=n.match(/^([A-Z][a-z]{2} \d{1,2}),\s*([^:]+):\s*(.*)$/s);return m?'<li><div class="nm"><b>'+esc(m[2])+'</b><span>'+esc(m[1])+'</span></div><p>'+esc(m[3])+'</p></li>':'<li><p>'+esc(n)+'</p></li>';}).join("");
+      return '<h4><span>Leg 2</span>The notes</h4><p class="lead">What the humans wrote, with dates.</p><ul class="nfeed">'+(notes||'<li><p class="lead">No notes on file.</p></li>')+'</ul>'
+        +(r.risks.length?'<h5>Risk signals</h5><ul>'+r.risks.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>':"")
+        +'<h5>Record check</h5><p><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+' trust</span>'+(p.lie?'<b>Record:</b> '+esc(p.lie.record)+' <b>Notes:</b> '+esc(p.lie.notes)+' <b>Verify first:</b> '+esc(p.lie.verify):'The record and the notes agree.')+'</p>';}
+    if(leg===2){if(!r.play)return '<h4><span>Leg 3</span>The play</h4><p class="lead">Not written yet.</p>';
+      return '<h4><span>Leg 3</span>The play</h4><dl class="play"><dt>Why now</dt><dd>'+esc(p.why_now)+'</dd><dt>Next move</dt><dd>'+esc(p.play)+'</dd><dt>Expansion signal</dt><dd>'+esc(p.expansion)+'</dd><dt>Who to engage</dt><dd>'+esc(p.engage)+'</dd><dt>Biggest unknown</dt><dd>'+esc(p.unknown)+'</dd><dt>Ask the outgoing rep</dt><dd class="q">“'+esc(p.baton)+'”</dd></dl>';}
+    return '<h4><span>Leg 4</span>The brief</h4><p class="lead">The whole book in ninety seconds, voiced in your own voice.'+(ep?' <a href="#brief" style="color:var(--bib)">Play it ↑</a>':'')+'</p><p class="script">'+esc(dash.brief||"No brief yet.")+'</p>';
+  }
+  function showAcct(){
+    const r=rows[sel];if(!r)return;
+    document.getElementById("rhead").innerHTML='<div><b>'+esc(r.name)+'</b><span class="sub">'+esc(r.arr)+' ARR · renews in '+r.days+' days · '+esc(r.record.Industry||"")+'</span></div><span class="pill" style="background:'+CAT[r.category]+'">'+esc(r.category)+'</span>';
+    const m=document.querySelector("#meter i");m.style.width=r.score+"%";m.style.background=BAND[r.band];
+    document.getElementById("rparts").innerHTML='<span><i>Relay score</i><b style="color:'+BAND[r.band]+'">'+r.score+'</b></span><span><i>Renewal</i><b>'+r.renewal+'</b></span><span><i>Spend</i><b>'+r.spend+'</b></span><span><i>Health</i><b>'+r.health+'</b></span><span><i>Trust</i><b style="color:'+TRUST[r.trust]+'">'+esc(r.trust)+'</b></span>';
+    document.getElementById("why").innerHTML='<b>Why '+r.score+'.</b> '+esc(r.why.renewal)+' '+esc(r.why.spend)+' '+esc(r.why.health);
+    legs.forEach(b=>b.setAttribute("aria-selected",+b.dataset.leg===leg));
+    document.getElementById("fill").style.width=((leg+1)*25)+"%";
+    document.getElementById("baton").style.left="calc("+((leg+1)*25)+"% - "+(leg===3?36:22)+"px)";
+    document.getElementById("card").innerHTML=legHTML(r);
+    history.replaceState(null,"","#"+encodeURIComponent(r.name));
+  }
+  const lies=rows.filter(r=>r.play&&r.play.lie);
+  document.getElementById("liecount").textContent=lies.length+" of "+rows.length+" accounts";
+  document.getElementById("liesbox").innerHTML=lies.map(r=>'<div class="lie"><div><b><button type="button" data-i="'+(r.rank-1)+'">'+esc(r.name)+'</button></b><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+'</span></div><div><span class="l">The record says</span>'+esc(r.play.lie.record)+'</div><div><span class="l">The notes say</span>'+esc(r.play.lie.notes)+'</div><div><span class="l">Verify first</span>'+esc(r.play.lie.verify)+'</div></div>').join("");
+  document.getElementById("liesbox").querySelectorAll("button").forEach(b=>b.onclick=()=>{sel=+b.dataset.i;leg=1;filt=null;kp.querySelectorAll(".kpi").forEach(x=>x.setAttribute("aria-pressed","false"));drawList();document.getElementById("book").scrollIntoView({behavior:"smooth"});});
+  const want=decodeURIComponent(location.hash.slice(1));const wi=rows.findIndex(r=>r.name===want);if(wi>=0)sel=wi;
+  drawList();
 })();
 </script>
 </body></html>
