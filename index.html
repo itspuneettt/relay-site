@@ -2,63 +2,118 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Relay</title>
-<meta name="description" content="Pass the book. Keep the context. Your inherited book, ranked, with the ninety second brief in your ear.">
+<meta name="description" content="Pass the book. Keep the context. Your inherited book, ranked, explained, with the ninety second brief in your ear.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <style>
 *{box-sizing:border-box}
-:root{--bg:#FAF9F5;--ink:#141413;--surface:#fff;--line:#E8E5DC;--muted:#5E5D59;--glaze:#F2EFE6;
+:root{--bg:#FAF9F5;--ink:#141413;--surface:#fff;--line:#E8E5DC;--muted:#5E5D59;--glaze:#F2EFE6;--soft:#F6F4EE;
 --run:#C2573A;--protect:#D9A23B;--expand:#4E8F6A;--watch:#8A867E;
 --d:"Instrument Sans",Arial,sans-serif;--s:"Source Serif 4",Georgia,serif}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D}}
-:root[data-theme="dark"]{--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D;--soft:#1A1915}}
+:root[data-theme="dark"]{--bg:#161512;--ink:#F1EEE6;--surface:#1F1D19;--line:#2E2B25;--muted:#A8A49B;--glaze:#24221D;--soft:#1A1915}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--s);font-size:17px}
-.wrap{max-width:980px;margin:0 auto;padding:36px 16px 60px}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 16px 70px}
 .mono{font-family:var(--d);font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
-h1{font-family:var(--d);font-size:38px;font-weight:600;letter-spacing:-.03em;margin:6px 0 4px}
-h2{font-family:var(--d);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:34px 0 12px}
-.sub{font-family:var(--d);font-size:14px;color:var(--muted);margin:0 0 20px}
-.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
+h1{font-family:var(--d);font-size:40px;font-weight:600;letter-spacing:-.03em;margin:6px 0 4px}
+h2{font-family:var(--d);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:38px 0 12px;display:flex;align-items:baseline;gap:12px}
+h2 small{font-weight:400;text-transform:none;letter-spacing:0;font-size:12px}
+h3{font-family:var(--d);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+.sub{font-family:var(--d);font-size:14px;color:var(--muted);margin:0 0 18px;line-height:1.5}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.nav a{font-family:var(--d);font-size:12px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
+.nav a:hover{background:var(--glaze)}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
 @media(max-width:620px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.tile{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:11px 13px}
+.tile{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:11px 13px;cursor:pointer}
+.tile.on{outline:2px solid var(--ink)}
 .tile b{display:block;font-family:var(--d);font-size:20px;font-weight:600;letter-spacing:-.02em}
 .tile span{font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.player{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px 18px 14px;margin:0 0 8px}
+.tile i{font-style:normal;font-family:var(--d);font-size:11px;color:var(--muted);margin-left:6px}
+.card{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:18px 20px}
 .player .theme{font-family:var(--d);font-size:16px;font-weight:600;letter-spacing:-.01em;margin:2px 0 10px}
 .player audio{width:100%;display:block}
-.player .none{font-family:var(--d);font-size:13px;color:var(--muted)}
-.brief{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:22px 24px;font-size:18px;line-height:1.55;white-space:pre-wrap}
+.none{font-family:var(--d);font-size:13px;color:var(--muted)}
+.brief{font-size:18px;line-height:1.55;white-space:pre-wrap;margin-top:10px}
+details.fold>summary{cursor:pointer;font-family:var(--d);font-size:13px;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+details.fold>summary::before{content:"▸";font-size:11px}
+details.fold[open]>summary::before{content:"▾"}
+.explain{font-family:var(--d);font-size:14px;line-height:1.55;color:var(--ink)}
+.explain table{min-width:0;margin-top:10px}
+.explain td,.explain th{padding:7px 10px}
 .tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:640px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;min-width:680px}
 th{font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}
-td{padding:9px 10px;border-top:1px solid var(--line);font-family:var(--d);font-size:13.5px;vertical-align:middle}
-tr:first-child td{border-top:0}
+td{padding:10px 10px;border-top:1px solid var(--line);font-family:var(--d);font-size:13.5px;vertical-align:middle}
+tr.row{cursor:pointer}
+tr.row:hover td{background:var(--soft)}
+tr.row.open td{background:var(--glaze)}
+tr.hide{display:none}
 td.rk{color:#A5A199;font-size:10px;width:30px;text-align:right}
-td.sc{font-size:16px;font-weight:600;width:44px;text-align:right;font-variant-numeric:tabular-nums}
-td b{display:block;font-size:14px;font-weight:600}
-td span{font-size:11.5px;color:var(--muted)}
-td.n{width:62px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
-td.ct{width:84px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:right}
-.foot{margin-top:16px;font-family:var(--d);font-size:11.5px;color:var(--muted)}
+td.sc{font-size:17px;font-weight:600;width:48px;text-align:right;font-variant-numeric:tabular-nums}
+td.nm b{display:block;font-size:14px;font-weight:600}
+td.nm span{font-size:11.5px;color:var(--muted)}
+td.n{width:64px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+td.ct{width:92px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:right}
+td.tr{width:60px;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+td.car{width:22px;color:var(--muted);font-size:11px}
+tr.detail td{background:var(--soft);padding:0}
+.det{padding:18px 22px 24px;font-family:var(--d);font-size:14px;line-height:1.55}
+.det .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.det .grid{grid-template-columns:1fr}}
+.bars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:4px 0 6px}
+@media(max-width:620px){.bars{grid-template-columns:1fr}}
+.bar{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:10px 12px}
+.bar .k{display:flex;justify-content:space-between;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bar .k b{font-size:18px;color:var(--ink);letter-spacing:-.02em}
+.bar .t{height:5px;background:var(--line);border-radius:3px;margin:8px 0}
+.bar .t i{display:block;height:100%;border-radius:3px}
+.bar p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.rec{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px}
+.rec dt{color:var(--muted)}.rec dd{margin:0}
+.quote{border-left:3px solid var(--line);padding:4px 12px;margin:8px 0;font-family:var(--s);font-size:15px;line-height:1.5}
+.risk li{margin:3px 0}
+.verdict{display:inline-block;border-radius:999px;padding:2px 10px;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#fff;margin-right:8px}
+.play p{margin:0 0 10px}
+.play .lbl{font-weight:700;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.lies .card{margin-bottom:10px}
+.lies .who{font-family:var(--d);font-weight:600;font-size:15px;margin-bottom:6px;display:flex;gap:10px;align-items:center}
+.lies .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;font-family:var(--d);font-size:13px;line-height:1.5}
+@media(max-width:760px){.lies .cols{grid-template-columns:1fr}}
+.lies .lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.foot{margin-top:14px;font-family:var(--d);font-size:11.5px;color:var(--muted)}
 .pill{display:inline-block;border:1px solid var(--run);color:var(--run);border-radius:999px;padding:1px 9px;font-family:var(--d);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
 .past{list-style:none;padding:0;margin:0;font-family:var(--d);font-size:13px}
 .past li{padding:8px 0;border-top:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
-.past li:first-child{border-top:0}
-.past .d{color:var(--muted);min-width:56px}
-.past a{color:inherit}
+.past li:first-child{border-top:0}.past .d{color:var(--muted);min-width:56px}.past a{color:inherit}
+.hint{font-family:var(--d);font-size:12px;color:var(--muted);margin:6px 0 0}
 </style></head><body><div class="wrap">
 <div class="mono" id="stamp">Relay</div>
 <h1 id="title">Relay</h1>
 <p class="sub" id="sub">Loading the book…</p>
+<div class="nav"><a href="#brief">The brief</a><a href="#book">The book</a><a href="#lies">Where the record lies</a><a href="#score">How the score works</a></div>
 
-<h2>The brief</h2>
-<div class="player" id="player"><div class="none">No episode yet.</div></div>
-<div class="brief" id="brief" hidden></div>
+<h2 id="brief">The brief <small>ninety seconds, in your own voice</small></h2>
+<div class="card player" id="player"><div class="none">No episode yet.</div></div>
+<div class="card" id="briefcard" hidden><details class="fold" open><summary>Read the script</summary><div class="brief" id="brieftext"></div></details></div>
 
-<h2>The book</h2>
+<h2 id="book">The book <small>weakest first. Click any account to open it.</small></h2>
 <div class="tiles" id="tiles"></div>
-<div class="tablewrap"><table id="table"><tr><th></th><th>Score</th><th>Account</th><th>Renew</th><th>Spend</th><th>Health</th><th></th></tr></table></div>
+<div class="tablewrap"><table id="table"><thead><tr><th></th><th>Score</th><th>Account</th><th>Renew</th><th>Spend</th><th>Health</th><th>Trust</th><th></th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
 <p class="foot" id="foot"></p>
+
+<h2 id="lies">Where the record lies <small>only the accounts whose notes disagree with the CRM</small></h2>
+<div class="lies" id="liesbox"><div class="none">Nothing to show.</div></div>
+
+<h2 id="score">How the score works</h2>
+<div class="card explain">
+<p>One number per account, zero to one hundred, <b>higher is better</b>. A high score is an account in good standing you can leave alone; a low score is an account that needs you. It is three inputs averaged, and every row shows all three so you can see which one is dragging.</p>
+<p><b>Renewal</b> is runway. Zero days scores zero, six months or more scores one hundred, straight line in between. Past half a year timing is not the problem, so it stops there.</p>
+<p><b>Spend</b> is contract value as a rank inside this book, not a raw scale: smallest account zero, largest one hundred, median fifty. One huge account cannot squash everyone else.</p>
+<p><b>Health</b> is the only input that says something is <i>wrong</i>. It starts at one hundred and loses: up to 25 for a stale next step (Low trust 25, Medium 12, High 0), up to 25 for usage (falling 25, flat 10, growing 0), 15 for open tickets or negative support sentiment, 20 for service failures.</p>
+<p><b>Reading it.</b> Under 40, something is wrong and the clock is running: this week. 40 to 69, worth a look this month. 70 and up, in good standing. <span id="wline"></span></p>
+<p><b>Trust</b> is a separate judgement: how far the CRM record has drifted from what the humans wrote in the notes. <b>Category</b> says what kind of attention: Run now, Protect, Expand or Watch.</p>
+</div>
 
 <h2>Past briefs</h2>
 <ul class="past" id="past"><li class="none">None yet.</li></ul>
@@ -67,31 +122,72 @@ td.ct{width:84px;font-size:9.5px;font-weight:700;letter-spacing:.08em;text-trans
 (async function(){
   const CAT={"Run now":"var(--run)","Protect":"var(--protect)","Expand":"var(--expand)","Watch":"var(--watch)"};
   const BAND={low:"var(--run)",mid:"var(--protect)",high:"var(--expand)"};
-  const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const TRUST={Low:"var(--run)",Medium:"var(--protect)",High:"var(--expand)"};
+  const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const bust="?v="+Date.now();
   let dash=null, eps=[];
   try{dash=await (await fetch("dashboard.json"+bust)).json();}catch(e){}
   try{eps=await (await fetch("episodes.json"+bust)).json();}catch(e){}
-
-  if(dash){
-    document.title="Relay · "+dash.title;
-    document.getElementById("stamp").textContent="Relay · generated "+dash.generated;
-    document.getElementById("title").textContent=dash.title;
-    document.getElementById("sub").textContent=dash.accounts+" accounts · "+dash.total+" · "+dash.weighting+" Higher is better, so the book opens on its weakest accounts.";
-    document.getElementById("tiles").innerHTML=dash.tiles.map(t=>'<div class="tile"><b style="color:'+CAT[t.category]+'">'+esc(t.total)+'</b><span>'+esc(t.category)+'</span></div>').join("");
-    const tb=document.getElementById("table");
-    tb.insertAdjacentHTML("beforeend",dash.rows.map(r=>'<tr><td class="rk">'+r.rank+'</td><td class="sc" style="color:'+BAND[r.band]+'">'+r.score+'</td><td><b>'+esc(r.name)+'</b><span>'+esc(r.arr)+' · renews in '+r.days+' days</span></td><td class="n">'+r.renewal+'</td><td class="n">'+r.spend+'</td><td class="n">'+r.health+'</td><td class="ct" style="color:'+CAT[r.category]+'">'+esc(r.category)+'</td></tr>').join(""));
-    document.getElementById("foot").innerHTML=(dash.dummy?'<span class="pill">Dummy data</span>':'<span class="pill">Check the data</span>')+"Scores are renewal, spend and health averaged. Higher is better. Where the record and the rep notes disagree, trust the notes and verify before the call.";
-    if(dash.brief){const b=document.getElementById("brief");b.textContent=dash.brief;b.hidden=false;}
-  }else{
-    document.getElementById("sub").textContent="No book yet. Run /relay and it will land here.";
-  }
 
   if(eps.length){
     const e=eps[0];
     document.getElementById("player").innerHTML='<div class="mono">'+esc(e.date)+(e.dur?' · '+Math.floor(e.dur/60)+':'+String(e.dur%60).padStart(2,"0"):'')+'</div><div class="theme">'+esc(e.theme)+'</div><audio controls preload="metadata" src="'+esc(e.file)+'"></audio>';
     document.getElementById("past").innerHTML=eps.map(x=>'<li><span class="d">'+esc(x.short||x.date)+'</span><a href="'+esc(x.file)+'">'+esc(x.theme)+'</a></li>').join("");
   }
+  if(!dash){document.getElementById("sub").textContent="No book yet. Run /relay and it will land here.";return;}
+
+  document.title="Relay · "+dash.title;
+  document.getElementById("stamp").textContent="Relay · generated "+dash.generated;
+  document.getElementById("title").textContent=dash.title;
+  document.getElementById("sub").textContent=dash.accounts+" accounts · "+dash.total+" · "+dash.weighting+" "+dash.under40+" under forty. Higher is better, so the book opens on its weakest accounts.";
+  document.getElementById("wline").textContent="This book: "+dash.weighting;
+  if(dash.brief){document.getElementById("brieftext").textContent=dash.brief;document.getElementById("briefcard").hidden=false;}
+
+  let filter=null;
+  const tiles=document.getElementById("tiles");
+  tiles.innerHTML=dash.tiles.map(t=>'<div class="tile" data-cat="'+esc(t.category)+'" title="Click to show only '+esc(t.category)+'"><b style="color:'+CAT[t.category]+'">'+esc(t.total)+'<i>'+t.count+' acct'+(t.count==1?'':'s')+'</i></b><span>'+esc(t.category)+'</span></div>').join("");
+  tiles.querySelectorAll(".tile").forEach(el=>el.onclick=()=>{filter=(filter===el.dataset.cat)?null:el.dataset.cat;tiles.querySelectorAll(".tile").forEach(x=>x.classList.toggle("on",x.dataset.cat===filter));applyFilter();});
+  function applyFilter(){document.querySelectorAll("#tbody tr.row").forEach(r=>{const on=!filter||r.dataset.cat===filter;r.classList.toggle("hide",!on);const d=r.nextElementSibling;if(d&&!on){d.remove();r.classList.remove("open");}});}
+
+  const tb=document.getElementById("tbody");
+  tb.innerHTML=dash.rows.map(r=>'<tr class="row" data-i="'+(r.rank-1)+'" data-cat="'+esc(r.category)+'"><td class="rk">'+r.rank+'</td><td class="sc" style="color:'+BAND[r.band]+'">'+r.score+'</td><td class="nm"><b>'+esc(r.name)+'</b><span>'+esc(r.arr)+' · renews in '+r.days+' days</span></td><td class="n">'+r.renewal+'</td><td class="n">'+r.spend+'</td><td class="n">'+r.health+'</td><td class="tr" style="color:'+TRUST[r.trust]+'">'+esc(r.trust)+'</td><td class="ct" style="color:'+CAT[r.category]+'">'+esc(r.category)+'</td><td class="car">▸</td></tr>').join("");
+  document.getElementById("foot").innerHTML=(dash.dummy?'<span class="pill">Dummy data</span>Every company, person and number in this book is invented. ':'<span class="pill">Check the data</span>')+"Relay scores what it is given. Where the record and the rep notes disagree, trust the notes and verify before the call.";
+
+  function bar(label,val,why,color){return '<div class="bar"><div class="k"><span>'+label+'</span><b>'+val+'</b></div><div class="t"><i style="width:'+val+'%;background:'+color+'"></i></div><p>'+esc(why)+'</p></div>';}
+  function detail(r){
+    const p=r.play||{};
+    const sc=BAND[r.band];
+    let h='<div class="det">';
+    h+='<h3 style="margin-top:0">Why '+r.score+'</h3><div class="bars">'+bar("Renewal",r.renewal,r.why.renewal,sc)+bar("Spend",r.spend,r.why.spend,sc)+bar("Health",r.health,r.why.health,sc)+'</div>';
+    h+='<p class="hint">Score = (renewal × '+dash.weights.renewal+'% + spend × '+dash.weights.spend+'% + health × '+dash.weights.health+'%). Category: <b style="color:'+CAT[r.category]+'">'+esc(r.category)+'</b>. Trust in the record: <b style="color:'+TRUST[r.trust]+'">'+esc(r.trust)+'</b>.</p>';
+    h+='<div class="grid"><div>';
+    h+='<h3>Leg 1 · The record <span style="font-weight:400;text-transform:none;letter-spacing:0">(Salesforce)</span></h3><dl class="rec">'+Object.entries(r.record).filter(([k,v])=>v).map(([k,v])=>'<dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd>').join("")+'</dl>';
+    h+='<h3>Relationships</h3><dl class="rec"><dt>Champion</dt><dd>'+esc(r.champion||"None")+'</dd><dt>Key stakeholder</dt><dd>'+esc(r.stakeholder||"—")+'</dd><dt>Missing</dt><dd>'+esc(r.missing||"—")+'</dd></dl>';
+    h+='</div><div>';
+    h+='<h3>Leg 2 · The notes <span style="font-weight:400;text-transform:none;letter-spacing:0">(what the humans wrote)</span></h3>'+(r.notes.length?r.notes.map(n=>'<div class="quote">'+esc(n)+'</div>').join(""):'<p class="none">No notes on file.</p>');
+    if(r.risks.length)h+='<h3>Risk signals</h3><ul class="risk">'+r.risks.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>';
+    h+='<h3>Record check</h3><p><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+' trust</span>'+(p.lie?esc(p.lie.record)+' <b>vs.</b> '+esc(p.lie.notes)+' <b>Verify first:</b> '+esc(p.lie.verify):'The record and the notes agree.')+'</p>';
+    h+='</div></div>';
+    if(r.play){h+='<h3>Leg 3 · The play</h3><div class="grid play"><div><p><span class="lbl">Why now</span>'+esc(p.why_now)+'</p><p><span class="lbl">Next move</span>'+esc(p.play)+'</p><p><span class="lbl">Expansion signal</span>'+esc(p.expansion)+'</p></div><div><p><span class="lbl">Who to engage</span>'+esc(p.engage)+'</p><p><span class="lbl">Biggest unknown</span>'+esc(p.unknown)+'</p><p><span class="lbl">Ask the outgoing rep</span>“'+esc(p.baton)+'”</p></div></div>';}
+    else h+='<h3>Leg 3 · The play</h3><p class="none">Not written yet.</p>';
+    return h+'</div>';
+  }
+  tb.addEventListener("click",ev=>{
+    const tr=ev.target.closest("tr.row");if(!tr)return;
+    const open=tr.classList.contains("open");
+    document.querySelectorAll("#tbody tr.detail").forEach(x=>x.remove());
+    document.querySelectorAll("#tbody tr.row.open").forEach(x=>{x.classList.remove("open");x.lastElementChild.textContent="▸";});
+    if(open)return;
+    const r=dash.rows[+tr.dataset.i];
+    tr.classList.add("open");tr.lastElementChild.textContent="▾";
+    const d=document.createElement("tr");d.className="detail";d.innerHTML='<td colspan="9">'+detail(r)+'</td>';
+    tr.after(d);
+    if(location.hash!=="#"+encodeURIComponent(r.name))history.replaceState(null,"","#"+encodeURIComponent(r.name));
+  });
+  const lies=dash.rows.filter(r=>r.play&&r.play.lie);
+  if(lies.length)document.getElementById("liesbox").innerHTML=lies.map(r=>'<div class="card"><div class="who"><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+'</span>'+esc(r.name)+'<span class="mono" style="font-weight:500">'+esc(r.arr)+' · '+r.days+' days</span></div><div class="cols"><div><span class="lbl">The record says</span>'+esc(r.play.lie.record)+'</div><div><span class="lbl">The notes say</span>'+esc(r.play.lie.notes)+'</div><div><span class="lbl">Verify before the call</span>'+esc(r.play.lie.verify)+'</div></div></div>').join("");
+  const want=decodeURIComponent(location.hash.slice(1));
+  if(want){const i=dash.rows.findIndex(r=>r.name===want);if(i>=0){const tr=tb.querySelector('tr[data-i="'+i+'"]');tr.click();tr.scrollIntoView({block:"start"});}}
 })();
 </script>
 </body></html>

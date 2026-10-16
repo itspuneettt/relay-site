@@ -1,225 +1,957 @@
 {
-  "title": "Puneet's inherited book",
-  "generated": "2026-10-16",
-  "accounts": 15,
-  "total": "$1.78M",
-  "weighting": "Even weighting. Renewal 33, spend 33, health 33.",
-  "dummy": true,
-  "under40": 4,
-  "tiles": [
+ "title": "Puneet's inherited book",
+ "generated": "2026-10-16",
+ "accounts": 15,
+ "total": "$1.78M",
+ "weighting": "Even weighting. Renewal 33, spend 33, health 33.",
+ "weights": {
+  "renewal": 33,
+  "spend": 33,
+  "health": 33
+ },
+ "dummy": true,
+ "under40": 4,
+ "tiles": [
+  {
+   "category": "Run now",
+   "total": "$404K",
+   "count": 5
+  },
+  {
+   "category": "Protect",
+   "total": "$388K",
+   "count": 3
+  },
+  {
+   "category": "Expand",
+   "total": "$914K",
+   "count": 5
+  },
+  {
+   "category": "Watch",
+   "total": "$79K",
+   "count": 2
+  }
+ ],
+ "rows": [
+  {
+   "rank": 1,
+   "score": 30,
+   "band": "low",
+   "name": "Ventura Freight",
+   "arr": "$46K",
+   "arr_k": 46.0,
+   "days": 49,
+   "renewal": 27,
+   "spend": 14,
+   "health": 50,
+   "category": "Run now",
+   "trust": "Low",
+   "why": {
+    "renewal": "49 days to renewal on a 180-day runway, so 27 of 100.",
+    "spend": "$46K is the 13th largest contract of 15 in this book, so 14 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 25 for usage. Trust is Low and usage is falling. Health 50."
+   },
+   "penalties": [
     {
-      "category": "Run now",
-      "total": "$404K"
+     "label": "Stale next step",
+     "cost": 25
     },
     {
-      "category": "Protect",
-      "total": "$388K"
-    },
-    {
-      "category": "Expand",
-      "total": "$914K"
-    },
-    {
-      "category": "Watch",
-      "total": "$79K"
+     "label": "Usage",
+     "cost": 25
     }
-  ],
-  "rows": [
-    {
-      "rank": 1,
-      "score": 30,
-      "band": "low",
-      "name": "Ventura Freight",
-      "arr": "$46K",
-      "days": 49,
-      "renewal": 27,
-      "spend": 14,
-      "health": 50,
-      "category": "Run now",
-      "trust": "Low"
-    },
-    {
-      "rank": 2,
-      "score": 31,
-      "band": "low",
-      "name": "Pinnacle Staffing",
-      "arr": "$54K",
-      "days": 38,
-      "renewal": 21,
-      "spend": 21,
-      "health": 50,
-      "category": "Run now",
-      "trust": "Low"
-    },
-    {
-      "rank": 3,
-      "score": 37,
-      "band": "low",
-      "name": "Keeler & Roth",
-      "arr": "$88K",
-      "days": 34,
-      "renewal": 19,
-      "spend": 43,
-      "health": 50,
-      "category": "Run now",
-      "trust": "Low"
-    },
-    {
-      "rank": 4,
-      "score": 39,
-      "band": "low",
-      "name": "Tideline Robotics",
-      "arr": "$74K",
-      "days": 29,
-      "renewal": 16,
-      "spend": 36,
-      "health": 65,
-      "category": "Run now",
-      "trust": "Low"
-    },
-    {
-      "rank": 5,
-      "score": 45,
-      "band": "mid",
-      "name": "Northwind Analytics",
-      "arr": "$120K",
-      "days": 52,
-      "renewal": 29,
-      "spend": 57,
-      "health": 50,
-      "category": "Protect",
-      "trust": "Low"
-    },
-    {
-      "rank": 6,
-      "score": 49,
-      "band": "mid",
-      "name": "Halden Freight",
-      "arr": "$142K",
-      "days": 41,
-      "renewal": 23,
-      "spend": 64,
-      "health": 60,
-      "category": "Run now",
-      "trust": "Low"
-    },
-    {
-      "rank": 7,
-      "score": 54,
-      "band": "mid",
-      "name": "Pennfield Energy",
-      "arr": "$58K",
-      "days": 88,
-      "renewal": 49,
-      "spend": 29,
-      "health": 83,
-      "category": "Protect",
-      "trust": "Medium"
-    },
-    {
-      "rank": 8,
-      "score": 58,
-      "band": "mid",
-      "name": "Mirabel Studios",
-      "arr": "$44K",
-      "days": 156,
-      "renewal": 87,
-      "spend": 7,
-      "health": 80,
-      "category": "Watch",
-      "trust": "High"
-    },
-    {
-      "rank": 9,
-      "score": 62,
-      "band": "mid",
-      "name": "Verano Health Group",
-      "arr": "$96K",
-      "days": 63,
-      "renewal": 35,
-      "spend": 50,
-      "health": 100,
-      "category": "Expand",
-      "trust": "High"
-    },
-    {
-      "rank": 10,
-      "score": 65,
-      "band": "mid",
-      "name": "Cobalt Shore Insurance",
-      "arr": "$210K",
-      "days": 118,
-      "renewal": 66,
-      "spend": 86,
-      "health": 43,
-      "category": "Protect",
-      "trust": "Medium"
-    },
-    {
-      "rank": 11,
-      "score": 67,
-      "band": "mid",
-      "name": "Aster Point Logistics",
-      "arr": "$35K",
-      "days": 243,
-      "renewal": 100,
-      "spend": 0,
-      "health": 100,
-      "category": "Watch",
-      "trust": "High"
-    },
-    {
-      "rank": 12,
-      "score": 68,
-      "band": "mid",
-      "name": "Thorne & Vale",
-      "arr": "$182K",
-      "days": 64,
-      "renewal": 36,
-      "spend": 79,
-      "health": 88,
-      "category": "Expand",
-      "trust": "Medium"
-    },
-    {
-      "rank": 13,
-      "score": 85,
-      "band": "high",
-      "name": "Granby Retail Partners",
-      "arr": "$168K",
-      "days": 201,
-      "renewal": 100,
-      "spend": 71,
-      "health": 83,
-      "category": "Expand",
-      "trust": "Medium"
-    },
-    {
-      "rank": 14,
-      "score": 89,
-      "band": "high",
-      "name": "Harborview Health",
-      "arr": "$228K",
-      "days": 133,
-      "renewal": 74,
-      "spend": 93,
-      "health": 100,
-      "category": "Expand",
-      "trust": "High"
-    },
-    {
-      "rank": 15,
-      "score": 100,
-      "band": "high",
-      "name": "Varro Semiconductor",
-      "arr": "$240K",
-      "days": 186,
-      "renewal": 100,
-      "spend": 100,
-      "health": 100,
-      "category": "Expand",
-      "trust": "High"
+   ],
+   "record": {
+    "Industry": "Logistics · Regional trucking",
+    "Headquarters": "Fresno, CA",
+    "Size": "780 employees",
+    "Products in use": "Driver Safety Scoring",
+    "Contract value": "$46K ARR",
+    "Renewal": "49 days",
+    "Stage": "Renewal – Negotiation",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage down 16% · 61% of commit"
+   },
+   "notes": [
+    "Jul 18, M. Villanueva (outgoing rep): Hector cut 15% of the fleet in the spring. Said more cuts were \"possible.\""
+   ],
+   "risks": [
+    "Usage down 16% after a fleet reduction",
+    "Renewal 49 days out with a July next step",
+    "Fleet shrank by 15% this year"
+   ],
+   "champion": "Hector Ruiz, Safety Director",
+   "stakeholder": "CFO",
+   "missing": "No finance contact 49 days out.",
+   "play": {
+    "why_now": "Renewal in 49 days on a fleet that shrank 15% in the spring, with more cuts \"possible\" and no one in finance on your side.",
+    "play": "Call Hector Ruiz this week with a right-sized renewal built on the current fleet count, and ask him to bring the CFO into that conversation before procurement sets a number off the old one.",
+    "expansion": "Not enough evidence. The fleet is contracting.",
+    "engage": "Hector Ruiz (Safety Director), then the CFO. No finance contact exists today.",
+    "unknown": "Whether a second round of fleet cuts has already happened since July.",
+    "baton": "When Hector said more cuts were possible, did he give you a number or a date?",
+    "lie": {
+     "record": "Renewal – Negotiation, next step dated July.",
+     "notes": "Jul 18: fleet cut 15%, more cuts possible. Nothing since.",
+     "verify": "Current fleet size, and whether anyone has spoken to Hector since July."
     }
-  ],
-  "brief": "Here's your Relay Brief for Friday, October sixteenth.\n\nYou have fifteen accounts. Six need you this week, and the record is wrong about four of them. Every one of those four says renewal in negotiation or verbal. None has anything in writing.\n\nRun now. Keeler and Roth. Eighty eight thousand in annual recurring revenue, a renewal date past in the record, and procurement asked for a competitive quote two weeks ago. Nobody escalated it. Your champion is on leave until January. Call the Director of Knowledge Management today and get in front of procurement before the quote lands.\n\nExpand. Halden Freight. Usage up thirty four percent in thirty days, and a business unit lead asked for four hundred more seats and never heard back. Renewal is forty one days out. Call Dana Whitlock, get introduced to the Vice President of Operations, and bring the expansion and the renewal as one conversation.\n\nWatch. Cobalt Shore. The champion left in August, two service credits were approved and never applied, and the new Head of Claims Tech has ignored two emails. Apply the credits before they ask.\n\nRecord flag. Tideline Robotics. The stage says verbal. The notes say a competitor was named and nobody chased it.\n\nThree actions. Call Keeler and Roth procurement. Book Halden's Vice President. Apply Cobalt Shore's credits.\n\nThat's your Relay. Go run your leg."
+   }
+  },
+  {
+   "rank": 2,
+   "score": 31,
+   "band": "low",
+   "name": "Pinnacle Staffing",
+   "arr": "$54K",
+   "arr_k": 54.0,
+   "days": 38,
+   "renewal": 21,
+   "spend": 21,
+   "health": 50,
+   "category": "Run now",
+   "trust": "Low",
+   "why": {
+    "renewal": "38 days to renewal on a 180-day runway, so 21 of 100.",
+    "spend": "$54K is the 12th largest contract of 15 in this book, so 21 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 25 for usage. Trust is Low and usage is falling. Health 50."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 25
+    },
+    {
+     "label": "Usage",
+     "cost": 25
+    }
+   ],
+   "record": {
+    "Industry": "Professional services · Staffing",
+    "Headquarters": "Dallas, TX",
+    "Size": "1,200 employees",
+    "Products in use": "Candidate Matching",
+    "Contract value": "$54K ARR",
+    "Renewal": "38 days",
+    "Stage": "Renewal – Negotiation",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage down 22% · 58% of commit"
+   },
+   "notes": [
+    "Sep 8, M. Villanueva (outgoing rep): Freeze through year end. Luis expects headcount back in Q2 but would not put it in writing."
+   ],
+   "risks": [
+    "Usage down 22% after a hiring freeze",
+    "Renewal 38 days out with a blank amount",
+    "Next step unchanged for seven weeks"
+   ],
+   "champion": "Luis Moreno, Director of Recruiting",
+   "stakeholder": "VP Operations",
+   "missing": "No procurement contact 38 days out.",
+   "play": {
+    "why_now": "38 days out, usage down 22% behind a hiring freeze, and the renewal has a blank amount and a next step nobody has touched in seven weeks.",
+    "play": "Call Luis Moreno and propose a smaller renewal that steps back up when headcount returns in Q2, so the deal survives the freeze instead of drifting into a non-renewal.",
+    "expansion": "Not enough evidence. Freeze through year end.",
+    "engage": "Luis Moreno (Director of Recruiting); VP Operations. No procurement contact 38 days out.",
+    "unknown": "Whether \"headcount back in Q2\" is budgeted or hoped for. Luis would not put it in writing.",
+    "baton": "Has any dollar figure ever been discussed with Luis, or is the blank amount honest?",
+    "lie": {
+     "record": "Renewal – Negotiation with no amount; next step unchanged seven weeks.",
+     "notes": "Sep 8: freeze through year end, Q2 recovery not in writing.",
+     "verify": "Whether a number has ever been put to Luis."
+    }
+   }
+  },
+  {
+   "rank": 3,
+   "score": 37,
+   "band": "low",
+   "name": "Keeler & Roth",
+   "arr": "$88K",
+   "arr_k": 88.0,
+   "days": 34,
+   "renewal": 19,
+   "spend": 43,
+   "health": 50,
+   "category": "Run now",
+   "trust": "Low",
+   "why": {
+    "renewal": "34 days to renewal on a 180-day runway, so 19 of 100.",
+    "spend": "$88K is the 9th largest contract of 15 in this book, so 43 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 25 for usage. Trust is Low and usage is falling. Health 50."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 25
+    },
+    {
+     "label": "Usage",
+     "cost": 25
+    }
+   ],
+   "record": {
+    "Industry": "Legal · Mid-size firm",
+    "Headquarters": "Chicago, IL",
+    "Size": "740 employees",
+    "Products in use": "Document Classification, Matter Search",
+    "Contract value": "$88K ARR",
+    "Renewal": "34 days",
+    "Stage": "Renewal – Negotiation",
+    "Open opportunities": "Renewal · $88K · close date already passed",
+    "Adoption (Looker)": "Usage down 18% in 60 days · 49% of committed spend"
+   },
+   "notes": [
+    "Sep 5, M. Villanueva (outgoing rep): Priya out until January. Nobody formally covering. Usage started sliding the week she left.",
+    "Oct 1, M. Villanueva (outgoing rep): Procurement emailed asking for a quote \"for comparison purposes.\" Did not escalate it."
+   ],
+   "risks": [
+    "Usage down 18% since the knowledge-management lead went on leave",
+    "Renewal close date in the CRM is two weeks in the past",
+    "Procurement has asked for a competitive quote",
+    "Only one trained administrator left at the firm"
+   ],
+   "champion": "Vacant. Priya Shah is on leave until January.",
+   "stakeholder": "Director of Knowledge Management, covering two roles",
+   "missing": "No relationship with procurement, who are already running a quote.",
+   "play": {
+    "why_now": "Procurement asked for a competitive quote on Oct 1, the renewal close date in the CRM has already passed, and the champion is on leave until January.",
+    "play": "Get twenty minutes this week with the Director of Knowledge Management who is covering two roles, frame the renewal as continuity through Priya's absence, and ask for a direct introduction to procurement so you are part of the comparison rather than the thing being compared. Offer to train a second administrator as the reason to say yes now.",
+    "expansion": "Not enough evidence.",
+    "engage": "Director of Knowledge Management (acting), then procurement. Priya Shah is out until January.",
+    "unknown": "Who at the firm actually owns this decision while Priya is away.",
+    "baton": "Who at Keeler & Roth asked procurement for a comparison quote, and do they know Priya is coming back?",
+    "lie": {
+     "record": "Renewal – Negotiation; $88K opportunity with a close date already in the past.",
+     "notes": "Oct 1: procurement running a competitive quote. Not escalated.",
+     "verify": "Who requested the quote and when it is due back."
+    }
+   }
+  },
+  {
+   "rank": 4,
+   "score": 39,
+   "band": "low",
+   "name": "Tideline Robotics",
+   "arr": "$74K",
+   "arr_k": 74.0,
+   "days": 29,
+   "renewal": 16,
+   "spend": 36,
+   "health": 65,
+   "category": "Run now",
+   "trust": "Low",
+   "why": {
+    "renewal": "29 days to renewal on a 180-day runway, so 16 of 100.",
+    "spend": "$74K is the 10th largest contract of 15 in this book, so 36 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 10 for usage. Trust is Low and usage is flat. Health 65."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 25
+    },
+    {
+     "label": "Usage",
+     "cost": 10
+    }
+   ],
+   "record": {
+    "Industry": "Industrial robotics",
+    "Headquarters": "Portland, OR",
+    "Size": "540 employees",
+    "Products in use": "Fleet Telemetry, Anomaly Detection",
+    "Contract value": "$74K ARR",
+    "Renewal": "29 days",
+    "Stage": "Renewal – Verbal",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage flat for eight weeks · 76% of committed spend"
+   },
+   "notes": [
+    "Aug 27, M. Villanueva (outgoing rep): Ellis said \"we're not going anywhere\" on the call. Moved the stage to Verbal off the back of that. Nothing in writing.",
+    "Sep 15, M. Villanueva (outgoing rep): Ellis mentioned his VP asked him to \"look at what else is out there.\" Named a competitor. I did not chase it."
+   ],
+   "risks": [
+    "Renewal is 29 days out with nothing on the calendar",
+    "A competitor was named in the last call notes",
+    "No procurement contact identified",
+    "The verbal commit exists in the CRM but not in writing"
+   ],
+   "champion": "Ellis Nakamura, Platform Engineering Manager",
+   "stakeholder": "Director of Engineering, who approved the original purchase",
+   "missing": "No contact in procurement with 29 days to go.",
+   "play": {
+    "why_now": "29 days out, the stage says Verbal, nothing is in writing, and the champion's VP asked him to look at a named competitor three weeks ago.",
+    "play": "Call Ellis Nakamura this week, name the competitor conversation directly, and get the Director of Engineering who approved the original purchase to confirm the renewal in writing.",
+    "expansion": "Not enough evidence. Usage flat for eight weeks.",
+    "engage": "Ellis Nakamura (Platform Engineering Manager); Director of Engineering. No procurement contact identified.",
+    "unknown": "Which competitor, and whether the VP's ask is a procurement formality or a live evaluation.",
+    "baton": "Which competitor did Ellis name, and did his VP ask for a quote or just a look?",
+    "lie": {
+     "record": "Renewal – Verbal.",
+     "notes": "Aug 27: \"we're not going anywhere\" on a call, nothing in writing. Sep 15: VP asked him to look at a competitor. Not chased.",
+     "verify": "Whether the Director of Engineering will confirm renewal in writing."
+    }
+   }
+  },
+  {
+   "rank": 5,
+   "score": 45,
+   "band": "mid",
+   "name": "Northwind Analytics",
+   "arr": "$120K",
+   "arr_k": 120.0,
+   "days": 52,
+   "renewal": 29,
+   "spend": 57,
+   "health": 50,
+   "category": "Protect",
+   "trust": "Low",
+   "why": {
+    "renewal": "52 days to renewal on a 180-day runway, so 29 of 100.",
+    "spend": "$120K is the 7th largest contract of 15 in this book, so 57 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 25 for usage. Trust is Low and usage is falling. Health 50."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 25
+    },
+    {
+     "label": "Usage",
+     "cost": 25
+    }
+   ],
+   "record": {
+    "Industry": "Software · Data tooling",
+    "Headquarters": "Seattle, WA",
+    "Size": "1,100 employees",
+    "Products in use": "Scoring API, Usage Reporting",
+    "Contract value": "$120K ARR",
+    "Renewal": "52 days",
+    "Stage": "Renewal – Discovery",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "API calls down 31% in 30 days · 54% of committed spend"
+   },
+   "notes": [
+    "Sep 12, Solutions: Their staff engineer mentioned a prototype scorer built on open-source models. Said it was \"a side project.\" Did not sound like one.",
+    "Sep 30, M. Villanueva (outgoing rep): VP of Data gone. The integration engineer is now the only person who knows why they bought us."
+   ],
+   "risks": [
+    "Weekly active usage down 31% in 30 days",
+    "The VP of Data who championed us left the company",
+    "They have started building a comparable scorer in-house",
+    "Consuming only 54% of committed spend"
+   ],
+   "champion": "None. The VP of Data left in September.",
+   "stakeholder": "Staff engineer who owns the integration day to day",
+   "missing": "No executive relationship since the VP left.",
+   "play": {
+    "why_now": "API calls down 31% in 30 days, the VP who championed you left in September, and their staff engineer is building a comparable scorer in-house.",
+    "play": "This is a save, not a renewal. Get the integration engineer on a call this week to understand what the in-house scorer does and does not cover, then ask who inherited the VP of Data's budget and book that person before the renewal conversation starts.",
+    "expansion": "Not enough evidence. The opposite is in motion.",
+    "engage": "The staff engineer who owns the integration. No executive relationship since the VP left.",
+    "unknown": "Whether the \"side project\" scorer is already in production.",
+    "baton": "Who picked up the VP of Data's responsibilities, and have they ever heard of us?",
+    "lie": {
+     "record": "Renewal – Discovery, reads like a normal cycle.",
+     "notes": "Sep 12: in-house prototype scorer. Sep 30: VP of Data gone, one engineer left who knows why they bought.",
+     "verify": "Whether the in-house scorer is in production."
+    }
+   }
+  },
+  {
+   "rank": 6,
+   "score": 49,
+   "band": "mid",
+   "name": "Halden Freight",
+   "arr": "$142K",
+   "arr_k": 142.0,
+   "days": 41,
+   "renewal": 23,
+   "spend": 64,
+   "health": 60,
+   "category": "Run now",
+   "trust": "Low",
+   "why": {
+    "renewal": "41 days to renewal on a 180-day runway, so 23 of 100.",
+    "spend": "$142K is the 6th largest contract of 15 in this book, so 64 of 100.",
+    "health": "Starts at 100, minus 25 for stale next step, 15 for tickets or support sentiment. Trust is Low and usage is growing. Health 60."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 25
+    },
+    {
+     "label": "Tickets or support sentiment",
+     "cost": 15
+    }
+   ],
+   "record": {
+    "Industry": "Logistics · Freight brokerage",
+    "Headquarters": "Columbus, OH",
+    "Size": "2,400 employees",
+    "Products in use": "Carrier Scoring, Lane Pricing",
+    "Contract value": "$142K ARR",
+    "Renewal": "41 days",
+    "Stage": "Renewal – Negotiation",
+    "Open opportunities": "Business Unit 3 expansion · no amount · no close date",
+    "Adoption (Looker)": "Weekly active usage up 34% in 30 days · 54% of committed spend"
+   },
+   "notes": [
+    "Aug 14, M. Villanueva (outgoing rep): Dana asked us to hold pricing until their FY planning wraps in October. Said bringing a number now would \"get it killed in finance.\" Not logging as a stage change.",
+    "Sep 2, M. Villanueva (outgoing rep): BU3 lead reached out directly about access for ~400 people next year. Told them I'd come back after renewal. Never followed up.",
+    "Sep 29, Support: Power user in BU2 opened a ticket about API limits — they are pushing well past what the current tier assumes."
+   ],
+   "risks": [
+    "Renewal is 41 days out, already inside the 60-day notice window",
+    "No commercial conversation logged this quarter",
+    "Usage is climbing but the commit has not been revisited",
+    "The champion has never introduced us to the budget owner"
+   ],
+   "champion": "Dana Whitlock, Director of Operations",
+   "stakeholder": "VP Operations, who owns the budget and has never met us",
+   "missing": "No relationship with the finance partner who signs renewals.",
+   "play": {
+    "why_now": "Usage up 34% in 30 days, a business unit lead asked for ~400 more seats and never heard back, and the renewal is 41 days out, already inside the notice window, with no commercial conversation logged.",
+    "play": "Call Dana Whitlock now that October FY planning is wrapping, ask for the introduction to the VP of Operations who owns the budget, and bring the BU3 expansion and the renewal as one conversation so the commit is reset to what they are actually using.",
+    "expansion": "Strong. BU3 wants access for ~400 people next year; a BU2 power user is already pushing past API limits.",
+    "engage": "Dana Whitlock (Director of Operations); VP Operations who has never met you; the BU3 lead who reached out directly.",
+    "unknown": "Whether Dana's FY planning has wrapped yet. She asked for pricing to wait until October.",
+    "baton": "Who is the BU3 lead who reached out in September, and what exactly did you promise them?",
+    "lie": {
+     "record": "No commercial conversation logged this quarter; expansion opportunity with no amount or close date.",
+     "notes": "Aug 14: pricing held at customer's request. Sep 2: BU3 asked for ~400 seats, never followed up. Record under-states a live opportunity.",
+     "verify": "Whether FY planning has wrapped and Dana is ready for a number."
+    }
+   }
+  },
+  {
+   "rank": 7,
+   "score": 54,
+   "band": "mid",
+   "name": "Pennfield Energy",
+   "arr": "$58K",
+   "arr_k": 58.0,
+   "days": 88,
+   "renewal": 49,
+   "spend": 29,
+   "health": 83,
+   "category": "Protect",
+   "trust": "Medium",
+   "why": {
+    "renewal": "88 days to renewal on a 180-day runway, so 49 of 100.",
+    "spend": "$58K is the 11th largest contract of 15 in this book, so 29 of 100.",
+    "health": "Starts at 100, minus 12 for stale next step, 5 for usage. Trust is Medium and usage is growing. Health 83."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 12
+    },
+    {
+     "label": "Usage",
+     "cost": 5
+    }
+   ],
+   "record": {
+    "Industry": "Utilities · Electric",
+    "Headquarters": "Harrisburg, PA",
+    "Size": "4,200 employees",
+    "Products in use": "Outage Prediction (two of seven licensed modules in use)",
+    "Contract value": "$58K ARR",
+    "Renewal": "88 days",
+    "Stage": "Renewal – Discovery",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Two of seven modules in use · 41% of committed spend, eight months in"
+   },
+   "notes": [
+    "Sep 25, Solutions: Ran a refresher for Awa's team. Half of them had never opened the inspection module. Onboarding was closed out in March regardless."
+   ],
+   "risks": [
+    "Two of seven purchased modules in use eight months after signing",
+    "Onboarding marked complete, but notes describe users still in training",
+    "The economic buyer has been quiet since signature",
+    "No day-to-day user has ever joined a call"
+   ],
+   "champion": "Awa Diallo, Data Manager",
+   "stakeholder": "VP Technology, who signed the deal and has been quiet since",
+   "missing": "No day-to-day user has ever been on a call with us.",
+   "play": {
+    "why_now": "Two of seven licensed modules in use eight months in, onboarding was closed out while users were still being trained, and the economic buyer has been silent since signature.",
+    "play": "Reopen onboarding with Awa Diallo's team on the five unused modules, get one day-to-day user onto a call for the first time, and build a usage story before the VP Technology is asked to renew something his team barely opened.",
+    "expansion": "Not enough evidence. Adoption first.",
+    "engage": "Awa Diallo (Data Manager); VP Technology who signed and went quiet. No day-to-day user has ever joined a call.",
+    "unknown": "Which of the seven modules Awa's team would actually use if trained.",
+    "baton": "Why was onboarding closed in March when half the team had not opened the inspection module?",
+    "lie": {
+     "record": "Onboarding marked complete in March.",
+     "notes": "Sep 25: half of Awa's team had never opened the inspection module.",
+     "verify": "Which modules are actually in use today."
+    }
+   }
+  },
+  {
+   "rank": 8,
+   "score": 58,
+   "band": "mid",
+   "name": "Mirabel Studios",
+   "arr": "$44K",
+   "arr_k": 44.0,
+   "days": 156,
+   "renewal": 87,
+   "spend": 7,
+   "health": 80,
+   "category": "Watch",
+   "trust": "High",
+   "why": {
+    "renewal": "156 days to renewal on a 180-day runway, so 87 of 100.",
+    "spend": "$44K is the 14th largest contract of 15 in this book, so 7 of 100.",
+    "health": "Starts at 100, minus 5 for usage, 15 for tickets or support sentiment. Trust is High and usage is growing. Health 80."
+   },
+   "penalties": [
+    {
+     "label": "Usage",
+     "cost": 5
+    },
+    {
+     "label": "Tickets or support sentiment",
+     "cost": 15
+    }
+   ],
+   "record": {
+    "Industry": "Media · Animation",
+    "Headquarters": "Austin, TX",
+    "Size": "180 employees",
+    "Products in use": "Asset Tracking, Render Scheduling",
+    "Contract value": "$44K ARR",
+    "Renewal": "156 days",
+    "Stage": "Closed Won",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "All 60 licensed seats active · 96% of committed spend"
+   },
+   "notes": [
+    "Aug 30, M. Villanueva (outgoing rep): Easiest account in the book. Joss has offered to do a reference call twice and nobody has taken him up on it."
+   ],
+   "risks": [
+    "No risk signals. Adoption and sentiment are both healthy.",
+    "Fully licensed, with no headroom left to grow into"
+   ],
+   "champion": "Joss Ferreira, Head of Production",
+   "stakeholder": "Finance Manager, who handles the invoice",
+   "missing": "Nothing material at this contract size.",
+   "play": {
+    "why_now": "Nothing is wrong. All 60 seats active, 96% of commit, and a champion who has offered a reference call twice.",
+    "play": "Take Joss Ferreira up on the reference call this month, and use it to ask whether a second production team at the studio is coming up.",
+    "expansion": "Fully licensed with no headroom at this size; not enough evidence beyond that.",
+    "engage": "Joss Ferreira (Head of Production); Finance Manager handles the invoice.",
+    "unknown": "Whether the studio is growing headcount.",
+    "baton": "Is there anything Joss has asked for that we never delivered?",
+    "lie": null
+   }
+  },
+  {
+   "rank": 9,
+   "score": 62,
+   "band": "mid",
+   "name": "Verano Health Group",
+   "arr": "$96K",
+   "arr_k": 96.0,
+   "days": 63,
+   "renewal": 35,
+   "spend": 50,
+   "health": 100,
+   "category": "Expand",
+   "trust": "High",
+   "why": {
+    "renewal": "63 days to renewal on a 180-day runway, so 35 of 100.",
+    "spend": "$96K is the 8th largest contract of 15 in this book, so 50 of 100.",
+    "health": "Starts at 100. Trust is High and usage is growing. Health 100."
+   },
+   "penalties": [],
+   "record": {
+    "Industry": "Healthcare · Outpatient services",
+    "Headquarters": "Phoenix, AZ",
+    "Size": "3,100 employees",
+    "Products in use": "Scheduling Optimization, Care-Gap Reporting",
+    "Contract value": "$96K ARR",
+    "Renewal": "63 days",
+    "Stage": "Renewal – Qualification",
+    "Open opportunities": "Behavioral Health department · $40K · early stage",
+    "Adoption (Looker)": "Usage up 22% in 30 days · 108% of committed spend"
+   },
+   "notes": [
+    "Sep 8, M. Villanueva (outgoing rep): Marcus rolled scheduling out to six more clinics after a good Q2. That is the usage spike — it is structural, not a one-off.",
+    "Sep 30, M. Villanueva (outgoing rep): Behavioral Health director asked Marcus for logins. He told them to wait for the renewal. There is a real deal sitting here."
+   ],
+   "risks": [
+    "Already over commit, with overage billing ahead of the renewal",
+    "A second department is requesting access with no license path",
+    "Renewal inside 90 days with pricing unsettled"
+   ],
+   "champion": "Marcus Oyelaran, Clinical Systems Lead",
+   "stakeholder": "CIO, who sponsored the original deal",
+   "missing": "Nobody engaged in the second department that wants in.",
+   "play": {
+    "why_now": "Already at 108% of commit with overage billing ahead of a renewal inside 90 days, and a second department asking for logins with no license path.",
+    "play": "Call Marcus Oyelaran this week, get the Behavioral Health director into the room, and price the renewal to include that department rather than letting the overage run into the negotiation.",
+    "expansion": "Strong. Six more clinics rolled out after Q2; Behavioral Health asked for logins on Sep 30.",
+    "engage": "Marcus Oyelaran (Clinical Systems Lead); CIO who sponsored the deal; the Behavioral Health director, not yet engaged.",
+    "unknown": "How big the Behavioral Health rollout would be in seats.",
+    "baton": "What did Marcus tell the Behavioral Health director when he asked them to wait?",
+    "lie": null
+   }
+  },
+  {
+   "rank": 10,
+   "score": 65,
+   "band": "mid",
+   "name": "Cobalt Shore Insurance",
+   "arr": "$210K",
+   "arr_k": 210.0,
+   "days": 118,
+   "renewal": 66,
+   "spend": 86,
+   "health": 43,
+   "category": "Protect",
+   "trust": "Medium",
+   "why": {
+    "renewal": "118 days to renewal on a 180-day runway, so 66 of 100.",
+    "spend": "$210K is the 3rd largest contract of 15 in this book, so 86 of 100.",
+    "health": "Starts at 100, minus 12 for stale next step, 10 for usage, 15 for tickets or support sentiment, 20 for service failures. Trust is Medium and usage is flat. Health 43."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 12
+    },
+    {
+     "label": "Usage",
+     "cost": 10
+    },
+    {
+     "label": "Tickets or support sentiment",
+     "cost": 15
+    },
+    {
+     "label": "Service failures",
+     "cost": 20
+    }
+   ],
+   "record": {
+    "Industry": "Insurance · Property & casualty",
+    "Headquarters": "Hartford, CT",
+    "Size": "6,800 employees",
+    "Products in use": "Claims Intake, Fraud Triage, Reporting",
+    "Contract value": "$210K ARR",
+    "Renewal": "118 days",
+    "Stage": "Renewal – Discovery",
+    "Open opportunities": "Fraud Triage seats · $48K · Reporting add-on · $22K",
+    "Adoption (Looker)": "Usage flat for two quarters · 91% of committed spend"
+   },
+   "notes": [
+    "Aug 8, M. Villanueva (outgoing rep): Priya's last day is Friday. She said the claims org is \"not thrilled\" after the June and July incidents but that nobody is actively looking.",
+    "Sep 19, Support: Credits from the two SLA misses were approved but never applied to the account. Customer has not asked. Yet.",
+    "Oct 3, M. Villanueva (outgoing rep): Emailed the new Head of Claims Tech twice. No reply either time."
+   ],
+   "risks": [
+    "Champion left the company in August",
+    "Support sentiment negative two quarters running",
+    "Two SLA misses with credits never applied",
+    "No executive sponsor since the champion left"
+   ],
+   "champion": "None. Priya Raman left the company in August.",
+   "stakeholder": "Head of Claims Tech, who inherited us and has not engaged",
+   "missing": "No executive sponsor at all since the champion left.",
+   "play": {
+    "why_now": "The champion left in August, two SLA credits were approved and never applied, support sentiment has been negative two quarters, and the new Head of Claims Tech has ignored two emails.",
+    "play": "Apply the two SLA credits this week before the customer asks, then use that as the reason for a first call with the Head of Claims Tech: not to sell, to fix. The $70K in open expansion waits until there is a sponsor.",
+    "expansion": "Fraud Triage seats ($48K) and Reporting add-on ($22K) are open, but with no sponsor they are paper.",
+    "engage": "Head of Claims Tech who inherited the account and has not engaged. No executive sponsor since Priya Raman left.",
+    "unknown": "Whether the credits have been applied yet.",
+    "baton": "Who at Cobalt Shore was in the room for the June and July incidents, and how angry were they?",
+    "lie": {
+     "record": "Renewal – Discovery with $70K of expansion opportunities open.",
+     "notes": "Aug 8: champion leaving, claims org \"not thrilled\". Sep 19: SLA credits never applied. Oct 3: new stakeholder unresponsive.",
+     "verify": "Whether the credits have been applied."
+    }
+   }
+  },
+  {
+   "rank": 11,
+   "score": 67,
+   "band": "mid",
+   "name": "Aster Point Logistics",
+   "arr": "$35K",
+   "arr_k": 35.0,
+   "days": 243,
+   "renewal": 100,
+   "spend": 0,
+   "health": 100,
+   "category": "Watch",
+   "trust": "High",
+   "why": {
+    "renewal": "Six months or more to renewal, so timing is not the problem: 100.",
+    "spend": "$35K is the 15th largest contract of 15 in this book, so 0 of 100.",
+    "health": "Starts at 100. Trust is High and usage is growing. Health 100."
+   },
+   "penalties": [],
+   "record": {
+    "Industry": "Logistics · Last-mile delivery",
+    "Headquarters": "Denver, CO",
+    "Size": "95 employees",
+    "Products in use": "Route Scoring",
+    "Contract value": "$35K ARR",
+    "Renewal": "243 days",
+    "Stage": "Closed Won",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage up 9% since launch · 62% of committed spend"
+   },
+   "notes": [
+    "Jun 11, M. Villanueva (outgoing rep): Closed on the promise of a route-density report we do not ship yet. Rin remembers. Worth knowing before the review."
+   ],
+   "risks": [
+    "No risk signals yet. The account is four months old.",
+    "Still a first-year account proving the original business case"
+   ],
+   "champion": "Rin Kobayashi, Operations Analyst",
+   "stakeholder": "Director of Logistics, the economic buyer",
+   "missing": "No executive contact yet, which is normal at this stage.",
+   "play": {
+    "why_now": "Four months old and healthy, but it was closed on the promise of a route-density report that does not ship yet, and Rin remembers.",
+    "play": "Before the first business review, find out from product when route-density is coming, and tell Rin Kobayashi proactively rather than waiting to be asked.",
+    "expansion": "Not enough evidence. First-year account proving the business case.",
+    "engage": "Rin Kobayashi (Operations Analyst); Director of Logistics, the economic buyer.",
+    "unknown": "Whether the route-density report is on the roadmap at all.",
+    "baton": "Exactly what was promised about route-density, and was it in writing?",
+    "lie": null
+   }
+  },
+  {
+   "rank": 12,
+   "score": 68,
+   "band": "mid",
+   "name": "Thorne & Vale",
+   "arr": "$182K",
+   "arr_k": 182.0,
+   "days": 64,
+   "renewal": 36,
+   "spend": 79,
+   "health": 88,
+   "category": "Expand",
+   "trust": "Medium",
+   "why": {
+    "renewal": "64 days to renewal on a 180-day runway, so 36 of 100.",
+    "spend": "$182K is the 4th largest contract of 15 in this book, so 79 of 100.",
+    "health": "Starts at 100, minus 12 for stale next step. Trust is Medium and usage is growing. Health 88."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 12
+    }
+   ],
+   "record": {
+    "Industry": "Manufacturing · Industrial parts",
+    "Headquarters": "Cleveland, OH",
+    "Size": "5,200 employees",
+    "Products in use": "Defect Prediction",
+    "Contract value": "$182K ARR",
+    "Renewal": "64 days",
+    "Stage": "Renewal – Qualification",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage up 19% · 101% of commit"
+   },
+   "notes": [
+    "Aug 21, M. Villanueva (outgoing rep): Bill added plants as they needed them. Nobody stopped him. Nobody charged him either."
+   ],
+   "risks": [
+    "Seven plants live against an agreement written for three",
+    "Over commit with a renewal 64 days out",
+    "Pricing model has not been revisited since the original deal"
+   ],
+   "champion": "Bill Ostrowski, VP Quality",
+   "stakeholder": "CFO",
+   "missing": "No contact at the four plants that are not live.",
+   "play": {
+    "why_now": "Seven plants live on an agreement written for three, 101% of commit, renewal in 64 days, and the pricing model has never been revisited.",
+    "play": "Book Bill Ostrowski before the CFO notices the gap. Bring a true-up that prices seven plants fairly and leaves room for the remaining four, so the renewal is a growth story rather than an audit.",
+    "expansion": "Strong. Four plants not yet live, and Bill adds plants as he needs them.",
+    "engage": "Bill Ostrowski (VP Quality); CFO. No contact at the four plants not live.",
+    "unknown": "Whether the CFO knows the plant count.",
+    "baton": "Did anyone ever tell Bill the agreement was for three plants?",
+    "lie": {
+     "record": "Agreement covers three plants; Renewal – Qualification.",
+     "notes": "Aug 21: seven plants live, nobody stopped him, nobody charged him.",
+     "verify": "Current plant count before pricing the renewal."
+    }
+   }
+  },
+  {
+   "rank": 13,
+   "score": 85,
+   "band": "high",
+   "name": "Granby Retail Partners",
+   "arr": "$168K",
+   "arr_k": 168.0,
+   "days": 201,
+   "renewal": 100,
+   "spend": 71,
+   "health": 83,
+   "category": "Expand",
+   "trust": "Medium",
+   "why": {
+    "renewal": "Six months or more to renewal, so timing is not the problem: 100.",
+    "spend": "$168K is the 5th largest contract of 15 in this book, so 71 of 100.",
+    "health": "Starts at 100, minus 12 for stale next step, 5 for usage. Trust is Medium and usage is growing. Health 83."
+   },
+   "penalties": [
+    {
+     "label": "Stale next step",
+     "cost": 12
+    },
+    {
+     "label": "Usage",
+     "cost": 5
+    }
+   ],
+   "record": {
+    "Industry": "Retail · Specialty",
+    "Headquarters": "Atlanta, GA",
+    "Size": "19,000 employees",
+    "Products in use": "Labor Forecasting, Shrink Analytics",
+    "Contract value": "$168K ARR",
+    "Renewal": "201 days",
+    "Stage": "Closed Won",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage steady · 88% of committed spend, across two of five regions"
+   },
+   "notes": [
+    "Jul 22, M. Villanueva (outgoing rep): Tomás said the Southeast and Mountain regions are still on spreadsheets. His SVP would have to sponsor it. I never got that meeting."
+   ],
+   "risks": [
+    "No activity logged in 74 days on the second-largest account",
+    "Live in two of five regions with no expansion plan",
+    "The relationship stops at the director level"
+   ],
+   "champion": "Tomás Reyes, Retail Operations Director",
+   "stakeholder": "SVP Stores, mentioned in notes but never met",
+   "missing": "No relationship above the director level.",
+   "play": {
+    "why_now": "No activity logged in 74 days on the second-largest account, live in two of five regions, and the relationship stops at the director level.",
+    "play": "Reopen with Tomás Reyes this month and ask for the SVP Stores meeting the outgoing rep never got, with Southeast and Mountain as the agenda.",
+    "expansion": "Strong. Three regions still on spreadsheets; expansion needs an SVP sponsor.",
+    "engage": "Tomás Reyes (Retail Operations Director); SVP Stores, mentioned but never met.",
+    "unknown": "Why the account went quiet for 74 days.",
+    "baton": "What happened the last time you asked Tomás for the SVP meeting?",
+    "lie": {
+     "record": "Closed Won, category Expand, no open opportunities.",
+     "notes": "Jul 22: three regions on spreadsheets, SVP sponsorship needed, meeting never happened. Then silence.",
+     "verify": "Whether Tomás's SVP has ever been approached."
+    }
+   }
+  },
+  {
+   "rank": 14,
+   "score": 89,
+   "band": "high",
+   "name": "Harborview Health",
+   "arr": "$228K",
+   "arr_k": 228.0,
+   "days": 133,
+   "renewal": 74,
+   "spend": 93,
+   "health": 100,
+   "category": "Expand",
+   "trust": "High",
+   "why": {
+    "renewal": "133 days to renewal on a 180-day runway, so 74 of 100.",
+    "spend": "$228K is the 2nd largest contract of 15 in this book, so 93 of 100.",
+    "health": "Starts at 100. Trust is High and usage is growing. Health 100."
+   },
+   "penalties": [],
+   "record": {
+    "Industry": "Healthcare · Hospital system",
+    "Headquarters": "Baltimore, MD",
+    "Size": "11,000 employees",
+    "Products in use": "Capacity Planning",
+    "Contract value": "$228K ARR",
+    "Renewal": "133 days",
+    "Stage": "Closed Won",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage up 11% · 95% of commit"
+   },
+   "notes": [
+    "Sep 5, M. Villanueva (outgoing rep): Elaine says ambulatory is a separate budget and a separate fight."
+   ],
+   "risks": [
+    "Four of six facilities live",
+    "Approaching commit with steady growth"
+   ],
+   "champion": "Dr. Elaine Boateng, Chief Medical Informatics",
+   "stakeholder": "CIO",
+   "missing": "No contact in the ambulatory network.",
+   "play": {
+    "why_now": "Four of six facilities live, usage up 11%, approaching commit, with the ambulatory network sitting in a separate budget.",
+    "play": "Ask Dr. Elaine Boateng who owns the ambulatory budget and whether she will make the introduction; that is the fight she named, and she should not fight it alone.",
+    "expansion": "Strong. Two facilities and the whole ambulatory network are not live.",
+    "engage": "Dr. Elaine Boateng (Chief Medical Informatics); CIO. No contact in the ambulatory network.",
+    "unknown": "Who holds the ambulatory budget.",
+    "baton": "What does Elaine mean by \"a separate fight\", and has she tried before?",
+    "lie": null
+   }
+  },
+  {
+   "rank": 15,
+   "score": 100,
+   "band": "high",
+   "name": "Varro Semiconductor",
+   "arr": "$240K",
+   "arr_k": 240.0,
+   "days": 186,
+   "renewal": 100,
+   "spend": 100,
+   "health": 100,
+   "category": "Expand",
+   "trust": "High",
+   "why": {
+    "renewal": "Six months or more to renewal, so timing is not the problem: 100.",
+    "spend": "$240K is the 1st largest contract of 15 in this book, so 100 of 100.",
+    "health": "Starts at 100. Trust is High and usage is growing. Health 100."
+   },
+   "penalties": [],
+   "record": {
+    "Industry": "Technology · Semiconductors",
+    "Headquarters": "Austin, TX",
+    "Size": "9,100 employees",
+    "Products in use": "Yield Analysis",
+    "Contract value": "$240K ARR",
+    "Renewal": "186 days",
+    "Stage": "Closed Won",
+    "Open opportunities": "None open",
+    "Adoption (Looker)": "Usage up 8% · 90% of commit"
+   },
+   "notes": [
+    "Sep 24, M. Villanueva (outgoing rep): The Oregon fabs use a different MES. Hana thinks it is a six-month integration, not a no."
+   ],
+   "risks": [
+    "Three of five fabs live",
+    "Steady growth, renewal far out"
+   ],
+   "champion": "Dr. Hana Kim, Yield Engineering",
+   "stakeholder": "VP Manufacturing",
+   "missing": "No relationship at the two fabs not yet live.",
+   "play": {
+    "why_now": "Healthiest account in the book: three of five fabs live, usage up 8%, renewal six months out.",
+    "play": "Scope the Oregon MES integration with Dr. Hana Kim now, so a six-month project lands before the renewal rather than after it.",
+    "expansion": "Strong. Two Oregon fabs on a different MES; Hana calls it a six-month integration, not a no.",
+    "engage": "Dr. Hana Kim (Yield Engineering); VP Manufacturing. No relationship at the two fabs not live.",
+    "unknown": "Whether solutions engineering has scoped the Oregon MES.",
+    "baton": "Has anyone technical ever looked at the Oregon MES, or is six months Hana's guess?",
+    "lie": null
+   }
+  }
+ ],
+ "brief": "Here's your Relay Brief for Friday, October sixteenth.\n\nYou have fifteen accounts. Six need you this week, and the record is wrong about four of them. Every one of those four says renewal in negotiation or verbal. None has anything in writing.\n\nRun now. Keeler and Roth. Eighty eight thousand in annual recurring revenue, a renewal date past in the record, and procurement asked for a competitive quote two weeks ago. Nobody escalated it. Your champion is on leave until January. Call the Director of Knowledge Management today and get in front of procurement before the quote lands.\n\nExpand. Halden Freight. Usage up thirty four percent in thirty days, and a business unit lead asked for four hundred more seats and never heard back. Renewal is forty one days out. Call Dana Whitlock, get introduced to the Vice President of Operations, and bring the expansion and the renewal as one conversation.\n\nWatch. Cobalt Shore. The champion left in August, two service credits were approved and never applied, and the new Head of Claims Tech has ignored two emails. Apply the credits before they ask.\n\nRecord flag. Tideline Robotics. The stage says verbal. The notes say a competitor was named and nobody chased it.\n\nThree actions. Call Keeler and Roth procurement. Book Halden's Vice President. Apply Cobalt Shore's credits.\n\nThat's your Relay. Go run your leg."
 }

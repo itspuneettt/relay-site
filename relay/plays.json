@@ -1,0 +1,137 @@
+{
+  "Ventura Freight": {
+    "why_now": "Renewal in 49 days on a fleet that shrank 15% in the spring, with more cuts \"possible\" and no one in finance on your side.",
+    "play": "Call Hector Ruiz this week with a right-sized renewal built on the current fleet count, and ask him to bring the CFO into that conversation before procurement sets a number off the old one.",
+    "expansion": "Not enough evidence. The fleet is contracting.",
+    "engage": "Hector Ruiz (Safety Director), then the CFO. No finance contact exists today.",
+    "unknown": "Whether a second round of fleet cuts has already happened since July.",
+    "baton": "When Hector said more cuts were possible, did he give you a number or a date?",
+    "lie": {"record": "Renewal – Negotiation, next step dated July.", "notes": "Jul 18: fleet cut 15%, more cuts possible. Nothing since.", "verify": "Current fleet size, and whether anyone has spoken to Hector since July."}
+  },
+  "Pinnacle Staffing": {
+    "why_now": "38 days out, usage down 22% behind a hiring freeze, and the renewal has a blank amount and a next step nobody has touched in seven weeks.",
+    "play": "Call Luis Moreno and propose a smaller renewal that steps back up when headcount returns in Q2, so the deal survives the freeze instead of drifting into a non-renewal.",
+    "expansion": "Not enough evidence. Freeze through year end.",
+    "engage": "Luis Moreno (Director of Recruiting); VP Operations. No procurement contact 38 days out.",
+    "unknown": "Whether \"headcount back in Q2\" is budgeted or hoped for. Luis would not put it in writing.",
+    "baton": "Has any dollar figure ever been discussed with Luis, or is the blank amount honest?",
+    "lie": {"record": "Renewal – Negotiation with no amount; next step unchanged seven weeks.", "notes": "Sep 8: freeze through year end, Q2 recovery not in writing.", "verify": "Whether a number has ever been put to Luis."}
+  },
+  "Keeler & Roth": {
+    "why_now": "Procurement asked for a competitive quote on Oct 1, the renewal close date in the CRM has already passed, and the champion is on leave until January.",
+    "play": "Get twenty minutes this week with the Director of Knowledge Management who is covering two roles, frame the renewal as continuity through Priya's absence, and ask for a direct introduction to procurement so you are part of the comparison rather than the thing being compared. Offer to train a second administrator as the reason to say yes now.",
+    "expansion": "Not enough evidence.",
+    "engage": "Director of Knowledge Management (acting), then procurement. Priya Shah is out until January.",
+    "unknown": "Who at the firm actually owns this decision while Priya is away.",
+    "baton": "Who at Keeler & Roth asked procurement for a comparison quote, and do they know Priya is coming back?",
+    "lie": {"record": "Renewal – Negotiation; $88K opportunity with a close date already in the past.", "notes": "Oct 1: procurement running a competitive quote. Not escalated.", "verify": "Who requested the quote and when it is due back."}
+  },
+  "Tideline Robotics": {
+    "why_now": "29 days out, the stage says Verbal, nothing is in writing, and the champion's VP asked him to look at a named competitor three weeks ago.",
+    "play": "Call Ellis Nakamura this week, name the competitor conversation directly, and get the Director of Engineering who approved the original purchase to confirm the renewal in writing.",
+    "expansion": "Not enough evidence. Usage flat for eight weeks.",
+    "engage": "Ellis Nakamura (Platform Engineering Manager); Director of Engineering. No procurement contact identified.",
+    "unknown": "Which competitor, and whether the VP's ask is a procurement formality or a live evaluation.",
+    "baton": "Which competitor did Ellis name, and did his VP ask for a quote or just a look?",
+    "lie": {"record": "Renewal – Verbal.", "notes": "Aug 27: \"we're not going anywhere\" on a call, nothing in writing. Sep 15: VP asked him to look at a competitor. Not chased.", "verify": "Whether the Director of Engineering will confirm renewal in writing."}
+  },
+  "Northwind Analytics": {
+    "why_now": "API calls down 31% in 30 days, the VP who championed you left in September, and their staff engineer is building a comparable scorer in-house.",
+    "play": "This is a save, not a renewal. Get the integration engineer on a call this week to understand what the in-house scorer does and does not cover, then ask who inherited the VP of Data's budget and book that person before the renewal conversation starts.",
+    "expansion": "Not enough evidence. The opposite is in motion.",
+    "engage": "The staff engineer who owns the integration. No executive relationship since the VP left.",
+    "unknown": "Whether the \"side project\" scorer is already in production.",
+    "baton": "Who picked up the VP of Data's responsibilities, and have they ever heard of us?",
+    "lie": {"record": "Renewal – Discovery, reads like a normal cycle.", "notes": "Sep 12: in-house prototype scorer. Sep 30: VP of Data gone, one engineer left who knows why they bought.", "verify": "Whether the in-house scorer is in production."}
+  },
+  "Halden Freight": {
+    "why_now": "Usage up 34% in 30 days, a business unit lead asked for ~400 more seats and never heard back, and the renewal is 41 days out, already inside the notice window, with no commercial conversation logged.",
+    "play": "Call Dana Whitlock now that October FY planning is wrapping, ask for the introduction to the VP of Operations who owns the budget, and bring the BU3 expansion and the renewal as one conversation so the commit is reset to what they are actually using.",
+    "expansion": "Strong. BU3 wants access for ~400 people next year; a BU2 power user is already pushing past API limits.",
+    "engage": "Dana Whitlock (Director of Operations); VP Operations who has never met you; the BU3 lead who reached out directly.",
+    "unknown": "Whether Dana's FY planning has wrapped yet. She asked for pricing to wait until October.",
+    "baton": "Who is the BU3 lead who reached out in September, and what exactly did you promise them?",
+    "lie": {"record": "No commercial conversation logged this quarter; expansion opportunity with no amount or close date.", "notes": "Aug 14: pricing held at customer's request. Sep 2: BU3 asked for ~400 seats, never followed up. Record under-states a live opportunity.", "verify": "Whether FY planning has wrapped and Dana is ready for a number."}
+  },
+  "Pennfield Energy": {
+    "why_now": "Two of seven licensed modules in use eight months in, onboarding was closed out while users were still being trained, and the economic buyer has been silent since signature.",
+    "play": "Reopen onboarding with Awa Diallo's team on the five unused modules, get one day-to-day user onto a call for the first time, and build a usage story before the VP Technology is asked to renew something his team barely opened.",
+    "expansion": "Not enough evidence. Adoption first.",
+    "engage": "Awa Diallo (Data Manager); VP Technology who signed and went quiet. No day-to-day user has ever joined a call.",
+    "unknown": "Which of the seven modules Awa's team would actually use if trained.",
+    "baton": "Why was onboarding closed in March when half the team had not opened the inspection module?",
+    "lie": {"record": "Onboarding marked complete in March.", "notes": "Sep 25: half of Awa's team had never opened the inspection module.", "verify": "Which modules are actually in use today."}
+  },
+  "Mirabel Studios": {
+    "why_now": "Nothing is wrong. All 60 seats active, 96% of commit, and a champion who has offered a reference call twice.",
+    "play": "Take Joss Ferreira up on the reference call this month, and use it to ask whether a second production team at the studio is coming up.",
+    "expansion": "Fully licensed with no headroom at this size; not enough evidence beyond that.",
+    "engage": "Joss Ferreira (Head of Production); Finance Manager handles the invoice.",
+    "unknown": "Whether the studio is growing headcount.",
+    "baton": "Is there anything Joss has asked for that we never delivered?",
+    "lie": null
+  },
+  "Verano Health Group": {
+    "why_now": "Already at 108% of commit with overage billing ahead of a renewal inside 90 days, and a second department asking for logins with no license path.",
+    "play": "Call Marcus Oyelaran this week, get the Behavioral Health director into the room, and price the renewal to include that department rather than letting the overage run into the negotiation.",
+    "expansion": "Strong. Six more clinics rolled out after Q2; Behavioral Health asked for logins on Sep 30.",
+    "engage": "Marcus Oyelaran (Clinical Systems Lead); CIO who sponsored the deal; the Behavioral Health director, not yet engaged.",
+    "unknown": "How big the Behavioral Health rollout would be in seats.",
+    "baton": "What did Marcus tell the Behavioral Health director when he asked them to wait?",
+    "lie": null
+  },
+  "Cobalt Shore Insurance": {
+    "why_now": "The champion left in August, two SLA credits were approved and never applied, support sentiment has been negative two quarters, and the new Head of Claims Tech has ignored two emails.",
+    "play": "Apply the two SLA credits this week before the customer asks, then use that as the reason for a first call with the Head of Claims Tech: not to sell, to fix. The $70K in open expansion waits until there is a sponsor.",
+    "expansion": "Fraud Triage seats ($48K) and Reporting add-on ($22K) are open, but with no sponsor they are paper.",
+    "engage": "Head of Claims Tech who inherited the account and has not engaged. No executive sponsor since Priya Raman left.",
+    "unknown": "Whether the credits have been applied yet.",
+    "baton": "Who at Cobalt Shore was in the room for the June and July incidents, and how angry were they?",
+    "lie": {"record": "Renewal – Discovery with $70K of expansion opportunities open.", "notes": "Aug 8: champion leaving, claims org \"not thrilled\". Sep 19: SLA credits never applied. Oct 3: new stakeholder unresponsive.", "verify": "Whether the credits have been applied."}
+  },
+  "Aster Point Logistics": {
+    "why_now": "Four months old and healthy, but it was closed on the promise of a route-density report that does not ship yet, and Rin remembers.",
+    "play": "Before the first business review, find out from product when route-density is coming, and tell Rin Kobayashi proactively rather than waiting to be asked.",
+    "expansion": "Not enough evidence. First-year account proving the business case.",
+    "engage": "Rin Kobayashi (Operations Analyst); Director of Logistics, the economic buyer.",
+    "unknown": "Whether the route-density report is on the roadmap at all.",
+    "baton": "Exactly what was promised about route-density, and was it in writing?",
+    "lie": null
+  },
+  "Thorne & Vale": {
+    "why_now": "Seven plants live on an agreement written for three, 101% of commit, renewal in 64 days, and the pricing model has never been revisited.",
+    "play": "Book Bill Ostrowski before the CFO notices the gap. Bring a true-up that prices seven plants fairly and leaves room for the remaining four, so the renewal is a growth story rather than an audit.",
+    "expansion": "Strong. Four plants not yet live, and Bill adds plants as he needs them.",
+    "engage": "Bill Ostrowski (VP Quality); CFO. No contact at the four plants not live.",
+    "unknown": "Whether the CFO knows the plant count.",
+    "baton": "Did anyone ever tell Bill the agreement was for three plants?",
+    "lie": {"record": "Agreement covers three plants; Renewal – Qualification.", "notes": "Aug 21: seven plants live, nobody stopped him, nobody charged him.", "verify": "Current plant count before pricing the renewal."}
+  },
+  "Granby Retail Partners": {
+    "why_now": "No activity logged in 74 days on the second-largest account, live in two of five regions, and the relationship stops at the director level.",
+    "play": "Reopen with Tomás Reyes this month and ask for the SVP Stores meeting the outgoing rep never got, with Southeast and Mountain as the agenda.",
+    "expansion": "Strong. Three regions still on spreadsheets; expansion needs an SVP sponsor.",
+    "engage": "Tomás Reyes (Retail Operations Director); SVP Stores, mentioned but never met.",
+    "unknown": "Why the account went quiet for 74 days.",
+    "baton": "What happened the last time you asked Tomás for the SVP meeting?",
+    "lie": {"record": "Closed Won, category Expand, no open opportunities.", "notes": "Jul 22: three regions on spreadsheets, SVP sponsorship needed, meeting never happened. Then silence.", "verify": "Whether Tomás's SVP has ever been approached."}
+  },
+  "Harborview Health": {
+    "why_now": "Four of six facilities live, usage up 11%, approaching commit, with the ambulatory network sitting in a separate budget.",
+    "play": "Ask Dr. Elaine Boateng who owns the ambulatory budget and whether she will make the introduction; that is the fight she named, and she should not fight it alone.",
+    "expansion": "Strong. Two facilities and the whole ambulatory network are not live.",
+    "engage": "Dr. Elaine Boateng (Chief Medical Informatics); CIO. No contact in the ambulatory network.",
+    "unknown": "Who holds the ambulatory budget.",
+    "baton": "What does Elaine mean by \"a separate fight\", and has she tried before?",
+    "lie": null
+  },
+  "Varro Semiconductor": {
+    "why_now": "Healthiest account in the book: three of five fabs live, usage up 8%, renewal six months out.",
+    "play": "Scope the Oregon MES integration with Dr. Hana Kim now, so a six-month project lands before the renewal rather than after it.",
+    "expansion": "Strong. Two Oregon fabs on a different MES; Hana calls it a six-month integration, not a no.",
+    "engage": "Dr. Hana Kim (Yield Engineering); VP Manufacturing. No relationship at the two fabs not live.",
+    "unknown": "Whether solutions engineering has scoped the Oregon MES.",
+    "baton": "Has anyone technical ever looked at the Oregon MES, or is six months Hana's guess?",
+    "lie": null
+  }
+}
