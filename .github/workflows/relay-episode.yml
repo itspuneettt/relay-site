@@ -1,0 +1,57 @@
+name: Relay episode
+
+# Runs whenever the Relay skill pushes a new brief. The ElevenLabs key and
+# voice ID live in this repo's Actions secrets and never leave GitHub.
+on:
+  push:
+    branches: [main]
+    paths: ["relay/brief.txt"]
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: One-line title for the episode
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: relay-episode
+  cancel-in-progress: false
+
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pick the theme
+        id: theme
+        run: |
+          T="${{ inputs.theme }}"
+          if [ -z "$T" ] && [ -f relay/theme.txt ]; then T="$(head -c 200 relay/theme.txt)"; fi
+          [ -z "$T" ] && T="Your Relay Brief"
+          echo "theme=$T" >> "$GITHUB_OUTPUT"
+
+      - name: Voice it with ElevenLabs
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          RELAY_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+        run: |
+          python3 relay/scripts/make_episode.py relay/brief.txt \
+            --out . --theme "${{ steps.theme.outputs.theme }}"
+
+      - name: Commit the episode
+        run: |
+          git config user.name "relay-bot"
+          git config user.email "relay-bot@users.noreply.github.com"
+          git add episodes episodes.json
+          git commit -m "Relay episode $(date -u +%F)" || { echo "nothing to commit"; exit 0; }
+          git pull --rebase origin main
+          git push

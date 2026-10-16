@@ -1,0 +1,225 @@
+{
+  "title": "Puneet's inherited book",
+  "generated": "2026-10-16",
+  "accounts": 15,
+  "total": "$1.78M",
+  "weighting": "Even weighting. Renewal 33, spend 33, health 33.",
+  "dummy": true,
+  "under40": 4,
+  "tiles": [
+    {
+      "category": "Run now",
+      "total": "$404K"
+    },
+    {
+      "category": "Protect",
+      "total": "$388K"
+    },
+    {
+      "category": "Expand",
+      "total": "$914K"
+    },
+    {
+      "category": "Watch",
+      "total": "$79K"
+    }
+  ],
+  "rows": [
+    {
+      "rank": 1,
+      "score": 30,
+      "band": "low",
+      "name": "Ventura Freight",
+      "arr": "$46K",
+      "days": 49,
+      "renewal": 27,
+      "spend": 14,
+      "health": 50,
+      "category": "Run now",
+      "trust": "Low"
+    },
+    {
+      "rank": 2,
+      "score": 31,
+      "band": "low",
+      "name": "Pinnacle Staffing",
+      "arr": "$54K",
+      "days": 38,
+      "renewal": 21,
+      "spend": 21,
+      "health": 50,
+      "category": "Run now",
+      "trust": "Low"
+    },
+    {
+      "rank": 3,
+      "score": 37,
+      "band": "low",
+      "name": "Keeler & Roth",
+      "arr": "$88K",
+      "days": 34,
+      "renewal": 19,
+      "spend": 43,
+      "health": 50,
+      "category": "Run now",
+      "trust": "Low"
+    },
+    {
+      "rank": 4,
+      "score": 39,
+      "band": "low",
+      "name": "Tideline Robotics",
+      "arr": "$74K",
+      "days": 29,
+      "renewal": 16,
+      "spend": 36,
+      "health": 65,
+      "category": "Run now",
+      "trust": "Low"
+    },
+    {
+      "rank": 5,
+      "score": 45,
+      "band": "mid",
+      "name": "Northwind Analytics",
+      "arr": "$120K",
+      "days": 52,
+      "renewal": 29,
+      "spend": 57,
+      "health": 50,
+      "category": "Protect",
+      "trust": "Low"
+    },
+    {
+      "rank": 6,
+      "score": 49,
+      "band": "mid",
+      "name": "Halden Freight",
+      "arr": "$142K",
+      "days": 41,
+      "renewal": 23,
+      "spend": 64,
+      "health": 60,
+      "category": "Run now",
+      "trust": "Low"
+    },
+    {
+      "rank": 7,
+      "score": 54,
+      "band": "mid",
+      "name": "Pennfield Energy",
+      "arr": "$58K",
+      "days": 88,
+      "renewal": 49,
+      "spend": 29,
+      "health": 83,
+      "category": "Protect",
+      "trust": "Medium"
+    },
+    {
+      "rank": 8,
+      "score": 58,
+      "band": "mid",
+      "name": "Mirabel Studios",
+      "arr": "$44K",
+      "days": 156,
+      "renewal": 87,
+      "spend": 7,
+      "health": 80,
+      "category": "Watch",
+      "trust": "High"
+    },
+    {
+      "rank": 9,
+      "score": 62,
+      "band": "mid",
+      "name": "Verano Health Group",
+      "arr": "$96K",
+      "days": 63,
+      "renewal": 35,
+      "spend": 50,
+      "health": 100,
+      "category": "Expand",
+      "trust": "High"
+    },
+    {
+      "rank": 10,
+      "score": 65,
+      "band": "mid",
+      "name": "Cobalt Shore Insurance",
+      "arr": "$210K",
+      "days": 118,
+      "renewal": 66,
+      "spend": 86,
+      "health": 43,
+      "category": "Protect",
+      "trust": "Medium"
+    },
+    {
+      "rank": 11,
+      "score": 67,
+      "band": "mid",
+      "name": "Aster Point Logistics",
+      "arr": "$35K",
+      "days": 243,
+      "renewal": 100,
+      "spend": 0,
+      "health": 100,
+      "category": "Watch",
+      "trust": "High"
+    },
+    {
+      "rank": 12,
+      "score": 68,
+      "band": "mid",
+      "name": "Thorne & Vale",
+      "arr": "$182K",
+      "days": 64,
+      "renewal": 36,
+      "spend": 79,
+      "health": 88,
+      "category": "Expand",
+      "trust": "Medium"
+    },
+    {
+      "rank": 13,
+      "score": 85,
+      "band": "high",
+      "name": "Granby Retail Partners",
+      "arr": "$168K",
+      "days": 201,
+      "renewal": 100,
+      "spend": 71,
+      "health": 83,
+      "category": "Expand",
+      "trust": "Medium"
+    },
+    {
+      "rank": 14,
+      "score": 89,
+      "band": "high",
+      "name": "Harborview Health",
+      "arr": "$228K",
+      "days": 133,
+      "renewal": 74,
+      "spend": 93,
+      "health": 100,
+      "category": "Expand",
+      "trust": "High"
+    },
+    {
+      "rank": 15,
+      "score": 100,
+      "band": "high",
+      "name": "Varro Semiconductor",
+      "arr": "$240K",
+      "days": 186,
+      "renewal": 100,
+      "spend": 100,
+      "health": 100,
+      "category": "Expand",
+      "trust": "High"
+    }
+  ],
+  "brief": "Here's your Relay Brief for Friday, October sixteenth.\n\nYou have fifteen accounts. Six need you this week, and the record is wrong about four of them. Every one of those four says renewal in negotiation or verbal. None has anything in writing.\n\nRun now. Keeler and Roth. Eighty eight thousand in annual recurring revenue, a renewal date past in the record, and procurement asked for a competitive quote two weeks ago. Nobody escalated it. Your champion is on leave until January. Call the Director of Knowledge Management today and get in front of procurement before the quote lands.\n\nExpand. Halden Freight. Usage up thirty four percent in thirty days, and a business unit lead asked for four hundred more seats and never heard back. Renewal is forty one days out. Call Dana Whitlock, get introduced to the Vice President of Operations, and bring the expansion and the renewal as one conversation.\n\nWatch. Cobalt Shore. The champion left in August, two service credits were approved and never applied, and the new Head of Claims Tech has ignored two emails. Apply the credits before they ask.\n\nRecord flag. Tideline Robotics. The stage says verbal. The notes say a competitor was named and nobody chased it.\n\nThree actions. Call Keeler and Roth procurement. Book Halden's Vice President. Apply Cobalt Shore's credits.\n\nThat's your Relay. Go run your leg."
+}
