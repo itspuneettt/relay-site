@@ -129,9 +129,18 @@ details p{margin:0 0 8px}
 @media(max-width:760px){.lie{grid-template-columns:1fr}}
 .foot{padding:22px 0 40px;font-family:var(--d);font-size:11.5px;color:var(--muted);line-height:1.5}
 .past{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.skillbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 12px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--d);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);border-radius:999px;padding:8px 14px;color:var(--ink)}
+.btn.fill{background:var(--ink);color:#fff}
+.md{font-family:var(--s);font-size:15px;line-height:1.55;max-height:520px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:14px 18px;background:var(--bg)}
+.md h1{font-size:22px;margin:0 0 8px}.md h2{font-size:15px;margin:18px 0 6px;font-family:var(--d)}.md h3{font-size:13px;margin:14px 0 4px}
+.md p{margin:0 0 8px}.md pre{font-family:var(--m);font-size:12px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;overflow-x:auto;margin:0 0 8px;white-space:pre-wrap}
+.md code{font-family:var(--m);font-size:12.5px;background:var(--glaze);border-radius:4px;padding:1px 4px}
+.md table{border-collapse:collapse;margin:0 0 8px;font-family:var(--d);font-size:13px}.md td,.md th{border:1px solid var(--line);padding:4px 8px;text-align:left}
+.md ul,.md ol{margin:0 0 8px;padding-left:22px}
 .past a{font-family:var(--d);font-size:11px;font-weight:600;color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 9px;background:var(--surface)}
 </style></head><body>
-<header class="top"><div class="wrap"><a class="mark" href="#top">Re<em>lay</em></a><nav><a href="#brief">Brief</a><a href="#book">Book</a><a href="#lies">Record check</a><a href="#score">Scoring</a></nav></div></header>
+<header class="top"><div class="wrap"><a class="mark" href="#top">Re<em>lay</em></a><nav><a href="#brief">Brief</a><a href="#book">Book</a><a href="#lies">Record check</a><a href="#score">Scoring</a><a href="#skill">Skill</a></nav></div></header>
 <div class="wrap" id="top">
 <div class="hero">
   <div><div class="mono" id="stamp">Relay</div><h1 id="title">Relay</h1><p id="sub">Loading the book…</p></div>
@@ -171,6 +180,12 @@ details p{margin:0 0 8px}
 <p>One number per account, zero to one hundred, <b>higher is better</b>. A high score is an account in good standing you can leave alone; a low score is an account that needs you. Three inputs averaged, and every account shows all three with the reason behind each, so you can see which one is dragging.</p>
 <p><b>Renewal</b> is runway: zero days scores zero, six months or more scores one hundred, straight line between. <b>Spend</b> is contract value ranked inside this book, smallest zero, largest one hundred, median fifty, so one huge account cannot squash the rest. <b>Health</b> is the only input that says something is <i>wrong</i>: it starts at one hundred and loses up to 25 for a stale next step (Low trust 25, Medium 12), up to 25 for usage (falling 25, flat 10), 15 for tickets or souring support sentiment, 20 for service failures.</p>
 <p><b>Reading it.</b> Under 40, this week. 40 to 69, this month. 70 and up, leave it alone. <span id="wline"></span> <b>Trust</b> is separate: how far the record has drifted from what the humans wrote. <b>Category</b> says what kind of attention: Run now, Protect, Expand or Watch.</p>
+</div></details>
+
+<details id="skill"><summary>The skill · install Relay in Claude</summary><div>
+<div class="skillbar"><a class="btn fill" href="relay-skill.zip" download>Download the skill</a><a class="btn" href="relay/SKILL.md" download>SKILL.md only</a><a class="btn" href="relay/assets/sample-book.csv" download>Enterprise book · 15</a><a class="btn" href="relay/assets/sample-book-100.csv" download>Mid-market book · 100</a></div>
+<p>Upload the zip under Settings → Skills in Claude, or drop the <code>relay</code> folder in <code>~/.claude/skills/</code> for Claude Code. Then type <code>/relay</code>: it asks one question and opens this page with the book scored and the brief voiced.</p>
+<div class="md" id="skillmd">Loading…</div>
 </div></details>
 
 <div class="foot"><span id="footnote"></span><div class="past" id="past"></div></div>
@@ -246,6 +261,24 @@ details p{margin:0 0 8px}
   document.getElementById("liecount").textContent=lies.length+" of "+rows.length+" accounts";
   document.getElementById("liesbox").innerHTML=lies.map(r=>'<div class="lie"><div><b><button type="button" data-i="'+(r.rank-1)+'">'+esc(r.name)+'</button></b><span class="verdict" style="background:'+TRUST[r.trust]+'">'+esc(r.trust)+'</span></div><div><span class="l">The record says</span>'+esc(r.play.lie.record)+'</div><div><span class="l">The notes say</span>'+esc(r.play.lie.notes)+'</div><div><span class="l">Verify first</span>'+esc(r.play.lie.verify)+'</div></div>').join("");
   document.getElementById("liesbox").querySelectorAll("button").forEach(b=>b.onclick=()=>{sel=+b.dataset.i;leg=1;filt=null;kp.querySelectorAll(".kpi").forEach(x=>x.setAttribute("aria-pressed","false"));drawList();document.getElementById("book").scrollIntoView({behavior:"smooth"});});
+  fetch("relay/SKILL.md"+bust).then(r=>r.text()).then(t=>{document.getElementById("skillmd").innerHTML=md(t);}).catch(()=>{document.getElementById("skillmd").textContent="Could not load SKILL.md.";});
+  function md(t){t=t.replace(/^---[\s\S]*?---\n/,"");const out=[];const L=t.split("\n");let i=0,inPre=false,pre=[],tbl=[],list=null;
+    const inl=s=>esc(s).replace(/`([^`]+)`/g,"<code>$1</code>").replace(/\*\*([^*]+)\*\*/g,"<b>$1</b>").replace(/\*([^*]+)\*/g,"<i>$1</i>");
+    const flushT=()=>{if(tbl.length){const rows=tbl.filter(r=>!/^\|\s*-/.test(r)).map(r=>r.replace(/^\||\|$/g,"").split("|").map(c=>c.trim()));out.push("<table>"+rows.map((r,k)=>"<tr>"+r.map(c=>(k?"<td>":"<th>")+inl(c)+(k?"</td>":"</th>")).join("")+"</tr>").join("")+"</table>");tbl=[];}};
+    const flushL=()=>{if(list){out.push("</"+list+">");list=null;}};
+    for(const raw of L){const l=raw.replace(/\s+$/,"");
+      if(/^ {4,}\S/.test(raw)&&!list){pre.push(raw.slice(4));inPre=true;continue;}else if(inPre){out.push("<pre>"+esc(pre.join("\n"))+"</pre>");pre=[];inPre=false;}
+      if(/^\|/.test(l)){flushL();tbl.push(l);continue;}else flushT();
+      let m;
+      if((m=l.match(/^(#{1,3}) (.*)/))){flushL();out.push("<h"+m[1].length+">"+inl(m[2])+"</h"+m[1].length+">");}
+      else if((m=l.match(/^- (.*)/))){if(list!=="ul"){flushL();out.push("<ul>");list="ul";}out.push("<li>"+inl(m[1])+"</li>");}
+      else if((m=l.match(/^\d+\. (.*)/))){if(list!=="ol"){flushL();out.push("<ol>");list="ol";}out.push("<li>"+inl(m[1])+"</li>");}
+      else if(/^\s+\S/.test(raw)&&list){out[out.length-1]=out[out.length-1].replace(/<\/li>$/," "+inl(l.trim())+"</li>");}
+      else if(l===""){flushL();out.push("\n");}
+      else{flushL();if(out.length&&out[out.length-1].startsWith("<p>")&&!out[out.length-1].endsWith("</p>")){}out.push("<p>"+inl(l)+"</p>");}
+    }
+    flushL();flushT();if(inPre)out.push("<pre>"+esc(pre.join("\n"))+"</pre>");
+    return out.join("").replace(/<\/p><p>/g," ");}
   const want=decodeURIComponent(location.hash.slice(1));const wi=rows.findIndex(r=>r.name===want);if(wi>=0)sel=wi;
   drawList();
 })();
