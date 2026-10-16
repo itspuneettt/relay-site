@@ -1,6 +1,6 @@
 ---
-name: relay
-description: Hands a rep a new book of business with the context still attached. Use when someone inherits accounts, takes over a territory, picks up a departing rep's book, runs a handoff or enablement session, or asks where to spend their first week.
+name: "relay"
+description: "Hands a rep a new book of business with the context still attached. Use when someone inherits accounts, takes over a territory, picks up a departing rep's book, runs a handoff or enablement session, or asks where to spend their first week."
 ---
 
 # Relay
@@ -56,8 +56,8 @@ redesign it, and do not add sections that make it long. `index.html` in the repo
 the source of truth and it reads `dashboard.json` and `episodes.json` at load, so a
 new book never needs a change to the HTML. What it shows, top to bottom:
 
-- A sticky top bar: the "Relay" mark with "lay" in bib colour, and four nav links:
-  Brief, Book, Record check, Scoring. No date anywhere in the header.
+- A sticky top bar: the "Relay" mark with "lay" in bib colour, and five nav links:
+  Brief, Book, Record check, Scoring, Skill. No date anywhere in the header.
 - The title line: book title, then one grey line with account count, total ARR,
   weighting and how many are under forty. Beside it, the podcast player: episode
   title, duration, and the audio bar. Nothing else above the panel.
@@ -76,7 +76,7 @@ new book never needs a change to the HTML. What it shows, top to bottom:
 - Below the panel, folded shut by default: **Where the record lies** (every Low and
   Medium trust account: record says, notes say, verify first; click a name to jump
   to its Leg 2), **How the score works**, and **The skill** (this file, rendered,
-  with a download button for `relay-skill.zip`).
+  with download buttons for `relay-skill.zip`, `SKILL.md` and the sample books).
 - A footer line: the dummy-data note when the book is a sample, and "Relay scores
   what it is given. Where the record and the rep notes disagree, trust the notes and
   verify before the call." Past briefs appear there as small chips.
