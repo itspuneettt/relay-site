@@ -24,6 +24,7 @@ h1,h2,h3,h4,h5,h6{font-family:var(--d);font-weight:600;letter-spacing:-.02em;lin
 .top nav a:hover{color:var(--ink)}
 .hero{padding:26px 0 16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:18px;align-items:end}
 @media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}}
+.handoff{display:block;width:min(300px,70%);height:auto;margin:0 0 6px -6px}
 .hero h1{font-size:clamp(30px,4.6vw,42px);letter-spacing:-.035em;margin:4px 0 4px}
 .hero p{margin:0;font-family:var(--d);font-size:13.5px;color:var(--muted);line-height:1.5}
 .pod{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:11px 13px 9px}
@@ -143,7 +144,34 @@ details p{margin:0 0 8px}
 <header class="top"><div class="wrap"><a class="mark" href="#top">Re<em>lay</em></a><nav><a href="#brief">Brief</a><a href="#book">Book</a><a href="#lies">Record check</a><a href="#score">Scoring</a><a href="#skill">Skill</a></nav></div></header>
 <div class="wrap" id="top">
 <div class="hero">
-  <div><div class="mono" id="stamp">Relay</div><h1 id="title">Relay</h1><p id="sub">Loading the book…</p></div>
+  <div><svg class="handoff" viewBox="0 0 330 150" role="img" aria-label="One runner passing a baton to the next.">
+      <g stroke="#E8E5DC" stroke-width="1.5">
+        <line x1="6" y1="139" x2="324" y2="139"/>
+        <line x1="6" y1="127" x2="324" y2="127" stroke-dasharray="2 7" opacity=".7"/>
+      </g>
+      <g stroke="#D9D5CC" stroke-width="3" stroke-linecap="round">
+        <line x1="12" y1="50" x2="36" y2="50"/><line x1="5" y1="67" x2="28" y2="67"/><line x1="16" y1="84" x2="34" y2="84"/>
+      </g>
+      
+      <g fill="none" stroke="#BBB5AB" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="70" cy="33" r="10" fill="#BBB5AB" stroke="none"/>
+        <path d="M82 53 L97 93" stroke-width="13"/>
+        <path d="M83 55 L63 69 L52 56" stroke-width="9"/>
+        <path d="M84 57 L107 76 L131 68" stroke-width="9"/>
+        <path d="M97 93 L113 115 L125 133" stroke-width="11"/>
+        <path d="M97 93 L77 111 L59 120" stroke-width="11"/>
+      </g>
+      <line x1="129" y1="68" x2="181" y2="62" stroke="#B4536A" stroke-width="8" stroke-linecap="round"/>
+      
+      <g fill="none" stroke="#141413" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="242" cy="31" r="10.5" fill="#141413" stroke="none"/>
+        <path d="M229 51 L214 91" stroke-width="13.5"/>
+        <path d="M230 53 L249 60 L259 45" stroke-width="9.5"/>
+        <path d="M229 54 L203 50 L183 62" stroke-width="9.5"/>
+        <path d="M214 91 L233 113 L247 132" stroke-width="11.5"/>
+        <path d="M214 91 L195 109 L177 116" stroke-width="11.5"/>
+      </g>
+    </svg><div class="mono" id="stamp">Relay</div><h1 id="title">Relay</h1><p id="sub">Loading the book…</p></div>
   <div class="pod" id="brief"><div class="none">No episode yet.</div></div>
 </div>
 
